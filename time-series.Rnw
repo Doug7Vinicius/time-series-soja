@@ -68,7 +68,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{PREVISÃO DO PREÇO DA SOJA}
+\titulo{PREVISÃO DO PREÇO DA SOJA MEDIANTE À ANÁLISE DE SÉRIES TEMPORAIS COM PYTHON}
 \autor{DOUGLAS VINÍCIUS GONÇALVES ARAÚJO}
 \local{JI-PARANÁ}
 \data{2022}
