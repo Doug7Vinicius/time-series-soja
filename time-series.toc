@@ -7,8 +7,8 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{Introdução}{13}{chapter*.9}%
+\contentsline {chapter}{INTRODUÇÃO}{13}{chapter*.9}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeUppercase {MODELO DE REGRESSÃO LOGÍSTICA}}{15}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {1}\MakeUppercase {}}{15}{chapter.1}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\MakeUppercase {Refer\^encias}}{17}{section*.11}%
