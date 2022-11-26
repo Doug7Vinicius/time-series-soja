@@ -2,7 +2,8 @@
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em recto e verso. Oposto a oneside
+	%twoside,			% para impressão em recto e verso. Oposto a oneside
+	oneside,      % para impressão direta das páginas. Oposto a twoside
 	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -118,7 +119,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{PREVISÃO DO PREÇO DA SOJA MEDIANTE À ANÁLISE DE SÉRIES TEMPORAIS COM PYTHON}
+\titulo{Análise de Séries Temporais: Aplicação do modelo ARIMA para previsão do Preço da Soja}
 \autor{DOUGLAS VINÍCIUS GONÇALVES ARAÚJO}
 \local{JI-PARANÁ}
 \data{2022}
@@ -131,7 +132,7 @@
 \tipotrabalho{Tese (Doutorado)}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
 % o nome da instituição e a área de concentração
-\preambulo{Relatório de Estágio Supervisionado apresentado como Trabalho de Pesquisa à Coordenação do Curso de Bacharelado em Estatística da Universidade Federal de Rondônia como requisito .}
+\preambulo{Relatório de Pesquisa na disciplina de Séries Temporais, do curso de Bacharel em Estatística da Universidade Federal de Rondônia, \textit{campus} Ji-Paraná, como requisito.}
 % ---
 
 % ---
@@ -210,6 +211,33 @@
 %  ``Se exigido pela entidade, apresentar os dados curriculares do autor em
 %     folha ou página distinta após a folha de rosto.''
 % ---
+% Epígrafe
+
+\begin{epigrafe} 
+  \vspace*{\fill} 
+  \begin{flushright} 
+  \textit{"Os livros servem para nos lembrar quanto somos estúpidos e tolos. 
+      \\ São o guarda pretoriano de César, cochichando enquanto o desfile ruge 
+      \\ pela avenida: – Lembre-se, César, tu és mortal. A maioria de nós não 
+      \\ pode sair correndo por aí, falar com todo mundo, conhecer todas as 
+      \\ cidades do mundo, não temos tempo, dinheiro ou tantos amigos assim. 
+      \\ As coisas que você está procurando, Montag, estão no mundo, mas a 
+      \\ única possibilidade que o sujeito comum terá de ver noventa e nove 
+      \\ por cento delas está num livro". 
+      \\ - Fahrenheit 451 de Ray Douglas Bradbury} 
+  \end{flushright} 
+\end{epigrafe}
+% ---
+% --- resumo em português--
+\begin{resumo} 
+  O objetivo deste trabalho tem como propor a analisar o comportamento dos preçõs
+  médios mensais da da \textit{commodities} soja 
+  por meio da metodologia Box \& Jenkins. Com isso foram utilizados .
+  \vspace{\onelineskip} 
+  \noindent
+  
+  \textbf{Palavras-chaves}: Modelo ARIMA, Preço da Soja, Séries Temporais. 
+\end{resumo}
 
 % ---
 % inserir lista de ilustrações
@@ -263,16 +291,99 @@
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
-\chapter*[INTRODUÇÃO]{INTRODUÇÃO}
-\addcontentsline{toc}{chapter}{INTRODUÇÃO}
+\chapter[Introdução]{Introdução}
+%\addcontentsline{toc}{chapter}{INTRODUÇÃO}
+
+A soja derivou na costa leste da Ásia, nas aproximidades do rio Yangtse na China. Antigamnete a soja eram plantas rasteiras, bem distinta de hoje que cultivamos. Sua 
+evolução 
+
+
+
+No Brasil, na década de 60, 
+
+
+A produção de soja avançou significativamente no mundo nestes últimos 20 anos, com taxas 
+de crescimento de $3,7\%$ ao ano. Os três maiores produtores de soja mundial, juntos, respondem por mais de $80\%$ da produção, que são Brasil, Estados Unidos (EUA) e Argentina. E destes, o país que mais apresentou taxa de crescimento da produção nessas últimas décadas é o Brasil, com aumento de $5,9\%$ a. a., superior entre os seus concorrentes (EUA avançou $2,7\%$ a. a. e a Argentina $1,6\%$ a. a.), segundo \cite{cepea2022}. 
+
+Neste mesmo período o Brasil deixou o posto de segundo lugar para ser o maior produtor de soja - na safra de 2001/2002, a produção brasileira era aproximadamente 52 milhões de toneladas, nesta mesma safra o EUA era aproximadamente 75 milhões de toneladas, agora na safra 2021/2022 o Brasil alcançou perto de 122 milhões toneladas, superior ao EUA que entorno de 120,7 milhões de toneladas, conforme dados da \cite{conab2022}.
+
+
+
+
+
+Diante do exposto deste trabalho, visa à aplicação de modelos \textbf{ARIMA} (Autorregressivos Integrados de Médias Móveis) nos índices de preços da \textit{commodities} soja com a finalidade de compreender o comportamento da 
+comercialização deste produto.
 
 
 % ----------------------------------------------------------
 % Capitulo de textual
 % ----------------------------------------------------------
-\chapter{}
+\chapter{REFERENCIAL TEÓRICO}
 
 
+  \section{Séries Temporais}
+  
+Qualquer conjunto de observações ordenadas no tempo, é uma série temporal. Por exemplos:
+
+\begin{itemize}
+  \item[\textit{i)}] temperaturas médias diárias de uma cidade;
+  \item[\textit{ii)}] vendas mensais de uma empresa;
+  \item[\textit{iii)}] valores de fechamento diários da IBOVESPA;
+  \item[\textit{iv)}] preços diários de \textit{commodities};
+  \item[\textit{v)}] valores mensais do IPCA (Índice Nacional de Preços ao Consumidor Amplo).
+\end{itemize}
+
+As séries temporais podem ser tanto discreta quanto contínua, ou seja, discreta é o 
+intervalo entre as observações pertecentes a um conjunto discreto e contínua é o 
+intervalo entre as observações pertecentes a um conjunto contínuo. Observa-se que 
+quando dizemos que uma série é discreta, estamos fazendo referência ao tempo entre as 
+observações e não a escala da variável.
+
+Além disso, temos dois enfoques usados na análise de séries temporais. O objetivo de ambos é construir modelos para as séries. No primeiro enfoque é feita análise no \textit{domínio temporal} e os modelos sugeridos são \textit{modelos paramétricos} (números de parâmetros finitos), o segundo é conduzido no \textit{domínio de frequências} e os propostos são 
+\textit{modelos não-paramétricos} \cite{morettin2006analise}. O modelo utilizado neste 
+estudo, \textbf{ARIMA} é um modelo paramétrico.
+
+
+  
+  
+  
+  
+  \section{}
+  
+      \subsection{}
+
+
+
+
+  \section{}
+
+
+
+
+
+\chapter{Metodologia}
+
+Por 
+
+
+Para obtenção das análises estatísticas dos dados, fez-se o uso do \textit{software} \textbf{R} versão 4.2.1
+
+
+A 
+
+
+O índice de Preços da \textit{commodities} Soja 
+
+
+
+
+\chapter{Resultados e Discussões}
+
+
+
+
+
+\chapter{Considerações Finais}
 
 % ----------------------------------------------------------
 \bibliography{abntex2-modelo-references}
