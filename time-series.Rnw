@@ -335,6 +335,13 @@ O índice de Preços da \textit{commodities} Soja
 
 \chapter{Resultados e Discussões}
 
+A Tabela apresenta as principais medidas descritivas obtidas a partir da série mensal 
+condizente ao indicador de preços em reais da Soja (reais por saca de 60 kg) compreendido 
+no período de outubro de 1997 a outubro de 2022, proporcionanddo uma visão panorâmica do comportamento da série em estudo.
+
+
+
+
 
 <<script0, echo=FALSE, message=FALSE, warning=FALSE>>=
 require(forecast)
@@ -371,7 +378,30 @@ autoplot(soja_decomp)
 
 
 
+
+
+
+<<script3, echo = FALSE>>=
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Considerações Finais}
+
+O presente trabalho teve como objetivo estudar o comportamento do preço da Soja no Brasil, e testar a metodologia Box \& Jenkins para previsão.
+
+
 
 % ----------------------------------------------------------
 \bibliography{abntex2-modelo-references}
@@ -440,49 +470,5 @@ summary(soja)
 \end{apendicesenv}
 % ---
 
-
-
-\begin{comment}
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-
-% ---
-% Inicia os anexos
-% ---
-\begin{anexosenv}
-
-% Imprime uma página indicando o início dos anexos
-\partanexos
-
-% ---
-\chapter{Morbi ultrices rutrum lorem.}
-% ---
-\lipsum[30]
-
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
-% ---
-
-\lipsum[31]
-
-% ---
-\chapter{Fusce facilisis lacinia dui}
-% ---
-
-\lipsum[32]
-
-\end{anexosenv}
-
-%---------------------------------------------------------------------
-% INDICE REMISSIVO
-%---------------------------------------------------------------------
-
-\phantompart
-
-\printindex
-
-\end{comment}
 
 \end{document}
