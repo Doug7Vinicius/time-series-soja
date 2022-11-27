@@ -86,7 +86,7 @@
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
-\usepackage{lipsum}				% para geração de dummy text
+%\usepackage{lipsum}				% para geração de dummy text
 % ---
 
 % ---
@@ -132,7 +132,7 @@
 \tipotrabalho{Tese (Doutorado)}
 % O preambulo deve conter o tipo do trabalho, o objetivo,
 % o nome da instituição e a área de concentração
-\preambulo{Relatório de Pesquisa na disciplina de Séries Temporais, do curso de Bacharel em Estatística da Universidade Federal de Rondônia, \textit{campus} Ji-Paraná, como requisito.}
+\preambulo{Relatório de Pesquisa na disciplina de Séries Temporais, do curso de Bacharel em Estatística da Universidade Federal de Rondônia, \textit{campus} Ji-Paraná, como requisito de avaliação.}
 % ---
 
 % ---
@@ -294,34 +294,43 @@
 \chapter[Introdução]{Introdução}
 %\addcontentsline{toc}{chapter}{INTRODUÇÃO}
 
-A soja derivou na costa leste da Ásia, nas aproximidades do rio Yangtse na China. Antigamnete a soja eram plantas rasteiras, bem distinta de hoje que cultivamos. Sua 
-evolução 
-
-
-
-No Brasil, na década de 60, 
+A soja derivou na costa leste da Ásia, nas aproximidades do rio Yangtse na China. Antigamente a soja eram plantas rasteiras, bem distinta de hoje que cultivamos que foram modificadas e melhoradas pelo chineses. Apesar de ser conhecida e consumida pela civilização oriental por milhares de anos, ocorreu a sua introdução na Europa no final do século XV. No Brasil, na década de 60, dois fatores internos que fizeram a produção de 
+soja expandir, fatores estes que influênciaram o cenário mundial da produção de grãos: \textit{i)} com o esforço da produção de suínos e aves assim gerava demanda pelo farelo de soja, já erá uma necessidade estratégica; \textit{ii)} na década de 70 houve a explosão 
+do preço da soja no mercado mundial e os agricultores e o governo beneficiavam de um 
+vantagem competitiva em relação de outros países, pois o escoamente da safra brasileira ocorre na entressafra americana, quando os preços atingem as maiores cotações, em conformidade com \cite{embrapa2022}.
 
 
 A produção de soja avançou significativamente no mundo nestes últimos 20 anos, com taxas 
-de crescimento de $3,7\%$ ao ano. Os três maiores produtores de soja mundial, juntos, respondem por mais de $80\%$ da produção, que são Brasil, Estados Unidos (EUA) e Argentina. E destes, o país que mais apresentou taxa de crescimento da produção nessas últimas décadas é o Brasil, com aumento de $5,9\%$ a. a., superior entre os seus concorrentes (EUA avançou $2,7\%$ a. a. e a Argentina $1,6\%$ a. a.), segundo \cite{cepea2022}. 
+de crescimento de $3,7\%$ ao ano. Os três maiores produtores de soja mundial, juntos, respondem por mais de $80\%$ da produção, que são Brasil, Estados Unidos (EUA) e Argentina. E destes, o país que mais apresentou taxa de crescimento da produção nessas últimas décadas é o Brasil, com aumento de $5,9\%$ a. a., superior entre os seus concorrentes (EUA avançou $2,7\%$ a. a. e a Argentina $1,6\%$ a. a.), segundo \cite{cepea2022}.
+
+\begin{figure}
+  \caption{\label{imagen1}Produção de Soja por continentes em 2020}
+    \begin{center}
+      \includegraphics[width=12cm]{image/img1.png}
+    \end{center}
+    \legend{Fonte: \cite{FAOSTAT2022}}
+\end{figure}
+
 
 Neste mesmo período o Brasil deixou o posto de segundo lugar para ser o maior produtor de soja - na safra de 2001/2002, a produção brasileira era aproximadamente 52 milhões de toneladas, nesta mesma safra o EUA era aproximadamente 75 milhões de toneladas, agora na safra 2021/2022 o Brasil alcançou perto de 122 milhões toneladas, superior ao EUA que entorno de 120,7 milhões de toneladas, conforme dados da \cite{conab2022}.
 
+\begin{figure}
+  \caption{\label{imagen2}Produção de Soja por ano no Brasil de 1994 a 2020}
+    \begin{center}
+      \includegraphics[scale = 0.7]{image/img2.png}
+    \end{center}
+    \legend{Fonte: \cite{FAOSTAT2022}}
+\end{figure}
 
 
-
-
-Diante do exposto deste trabalho, visa à aplicação de modelos \textbf{ARIMA} (Autorregressivos Integrados de Médias Móveis) nos índices de preços da \textit{commodities} soja com a finalidade de compreender o comportamento da 
+Diante do exposto deste trabalho, pretende à aplicação de modelos \textbf{ARIMA} (Autorregressivos Integrados de Médias Móveis) nos índices de preços da \textit{commodities} soja com a finalidade de compreender o comportamento da 
 comercialização deste produto.
 
 
 % ----------------------------------------------------------
 % Capitulo de textual
 % ----------------------------------------------------------
-\chapter{REFERENCIAL TEÓRICO}
-
-
-  \section{Séries Temporais}
+\chapter{Séries Temporais}
   
 Qualquer conjunto de observações ordenadas no tempo, é uma série temporal. Por exemplos:
 
@@ -334,7 +343,7 @@ Qualquer conjunto de observações ordenadas no tempo, é uma série temporal. P
 \end{itemize}
 
 As séries temporais podem ser tanto discreta quanto contínua, ou seja, discreta é o 
-intervalo entre as observações pertecentes a um conjunto discreto e contínua é o 
+intervalo entre as observações pertecentes a um conjunto discreto, e contínua é o 
 intervalo entre as observações pertecentes a um conjunto contínuo. Observa-se que 
 quando dizemos que uma série é discreta, estamos fazendo referência ao tempo entre as 
 observações e não a escala da variável.
@@ -344,18 +353,16 @@ Além disso, temos dois enfoques usados na análise de séries temporais. O obje
 estudo, \textbf{ARIMA} é um modelo paramétrico.
 
 
+
+
+  \section{Processos Estocásticos}
   
-  
-  
-  
-  \section{}
-  
-      \subsection{}
 
 
 
 
-  \section{}
+
+  \section{Decomposição de um Série Temporal}
 
 
 
@@ -383,6 +390,24 @@ O índice de Preços da \textit{commodities} Soja
 
 
 
+A Figura \ref{script1} apresenta a série original do indicador de preço em reais da soja no intervalo de outubro de 1997 a outubro de 2022 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/script1-1} \caption[Indicador de Preço da Soja no período de outubro de 1997 até outubro de 2022]{Indicador de Preço da Soja no período de outubro de 1997 até outubro de 2022}\label{fig:script1}
+\end{figure}
+
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/script2-1} \end{figure}
+
+\end{knitrout}
+
+
+
 \chapter{Considerações Finais}
 
 % ----------------------------------------------------------
@@ -406,7 +431,7 @@ O índice de Preços da \textit{commodities} Soja
 
 % Tirar os restantes das páginas não textuais.
 
-\begin{comment}
+
 
 \begin{apendicesenv}
 
@@ -414,21 +439,44 @@ O índice de Preços da \textit{commodities} Soja
 \partapendices
 
 % ----------------------------------------------------------
-\chapter{Quisque libero justo}
+\chapter{SCRIPT R}
 % ----------------------------------------------------------
 
-\lipsum[50]
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(forecast)}   \hlcom{#}
+\hlkwd{library}\hlstd{(timeSeries)} \hlcom{#}
+\hlkwd{library}\hlstd{(urca)}       \hlcom{#}
+\hlkwd{library}\hlstd{(randtests)}  \hlcom{#}
+\hlkwd{library}\hlstd{(tseries)}    \hlcom{#}
+\hlkwd{library}\hlstd{(stats)}      \hlcom{#}
+\hlkwd{library}\hlstd{(readxl)}     \hlcom{#}
+\hlkwd{library}\hlstd{(tidyverse)}  \hlcom{#}
 
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
-\lipsum[55-57]
+\hlstd{soja} \hlkwb{<-} \hlkwd{read_xls}\hlstd{(}\hlstr{"...dataset/soja.xls"}\hlstd{)} \hlcom{#}
+
+\hlstd{soja} \hlkwb{<-} \hlkwd{ts}\hlstd{(soja}\hlopt{$}\hlstd{Preço,} \hlkwc{start} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1997}\hlstd{,}\hlnum{10}\hlstd{),} \hlkwc{frequency} \hlstd{=} \hlnum{12}\hlstd{)} \hlcom{#}
+
+\hlkwd{class}\hlstd{(soja)} \hlcom{# }
+\hlkwd{as.ts}\hlstd{(soja)} \hlcom{# }
+
+\hlcom{### }
+\hlkwd{summary}\hlstd{(soja)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+
+
 
 \end{apendicesenv}
 % ---
 
 
+
+\begin{comment}
 % ----------------------------------------------------------
 % Anexos
 % ----------------------------------------------------------

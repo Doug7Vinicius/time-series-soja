@@ -7,9 +7,9 @@ require(stats)
 library(readxl)
 library(tidyverse)
 
-soja <- read_xls("C:\\Users\\Douglas\\Documents\\TRABALHO\\time-series-soja\\dataset\\soja\\SOJA1.xls")
+soja <- read_xls("C:\\Users\\Douglas\\Documents\\TRABALHO\\time-series-soja\\dataset\\soja.xls")
 
-soja <- ts(soja, start = c(1997,7), frequency = 12)
+soja <- ts(soja, start = c(1997,10), frequency = 12)
 
 class(soja)
 as.ts(soja)

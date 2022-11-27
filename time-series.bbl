@@ -18,10 +18,22 @@ Acesso em 26 de novembro de 2022.
 Dispon{\'\i}vel em:
   \url{https://www.conab.gov.br/busca?searchword=soja&searchphrase=all}.}
 
+\bibitem[EMBRAPA 2022]{embrapa2022}
+\abntrefinfo{EMBRAPA}{EMBRAPA}{2022}
+{EMBRAPA. 2022.
+Acesso em 26 de novembro de 2022.
+Dispon{\'\i}vel em: \url{https://www.embrapa.br/soja}.}
+
+\bibitem[FAOSTAT 2022]{FAOSTAT2022}
+\abntrefinfo{FAOSTAT}{FAOSTAT}{2022}
+{FAOSTAT. 2022.
+Acesso em 26 de novembro de 2022.
+Dispon{\'\i}vel em: \url{www.fao.org/faostat/en/\#data/QCL/visualize}.}
+
 \bibitem[Morettin e Toloi 2006]{morettin2006analise}
 \abntrefinfo{Morettin e Toloi}{MORETTIN; TOLOI}{2006}
-{MORETTIN, P.; TOLOI, C. An{\'a}lise de s{\'e}ries
-  temporais—2{\textordfeminine} edi{\c{c}}{\~a}o revista e ampliada.
+{MORETTIN, P.; TOLOI, C. An{\'a}lise de s{\'e}ries temporais
+  2{\textordfeminine} edi{\c{c}}{\~a}o revista e ampliada.
 \emph{ABE--Projeto Fisher, Editora Edgar Bl{\"u}cher}, 2006.}
 
 \end{thebibliography}
