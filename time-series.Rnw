@@ -32,7 +32,18 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 % ---
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{here}
+% ---
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[section]
 
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
@@ -179,7 +190,7 @@
 % ---
 % --- resumo em português--
 \begin{resumo} 
-  O objetivo deste trabalho tem como propor a analisar o comportamento dos preçõs
+  O objetivo deste trabalho tem como propor a análise do comportamento dos preçõs
   médios mensais da da \textit{commodities} soja 
   por meio da metodologia Box \& Jenkins. Com isso foram utilizados .
   \vspace{\onelineskip} 
@@ -208,8 +219,11 @@
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[ABNT] Associação Brasileira de Normas Técnicas
-  \item[abnTeX] ABsurdas Normas para TeX
+  \item [EMBRAPA] Empresa Brasileira de Pesquisa Agropecuária
+  \item [CEPEA]   Centro de Estudos Avançados em Economia Aplicada
+  \item [CONAB  ] Companhia Nacional de Abastecimento
+  \item [v.a.   ] Variável aleatória
+  \item [fdp    ] Função densidade de probabilidade
 \end{siglas}
 % ---
 
@@ -221,6 +235,7 @@
   \item[$ \Lambda $] Lambda
   \item[$ \zeta $] Letra grega minúscula zeta
   \item[$ \in $] Pertence
+  
 \end{simbolos}
 % ---
 
@@ -243,7 +258,11 @@
 \chapter[Introdução]{Introdução}
 %\addcontentsline{toc}{chapter}{INTRODUÇÃO}
 
-A soja derivou na costa leste da Ásia, nas aproximidades do rio Yangtse na China. Antigamente a soja eram plantas rasteiras, bem distinta de hoje que cultivamos que foram modificadas e melhoradas pelo chineses. Apesar de ser conhecida e consumida pela civilização oriental por milhares de anos, ocorreu a sua introdução na Europa no final do século XV. No Brasil, na década de 60, dois fatores internos que fizeram a produção de 
+
+
+A soja derivou na costa leste da Ásia, nas aproximidades do rio Yangtse na China. Antigamente a soja eram plantas rasteiras, bem distinta de hoje que cultivamos que foram modificadas e melhoradas pelo chineses. Apesar de ser conhecida e consumida pela civilização oriental por milhares de anos, ocorreu a sua introdução na Europa no final do século XV. 
+
+No Brasil, na década de 60, dois fatores internos que fizeram a produção de 
 soja expandir, fatores estes que influênciaram o cenário mundial da produção de grãos: \textit{i)} com o esforço da produção de suínos e aves assim gerava demanda pelo farelo de soja, já erá uma necessidade estratégica; \textit{ii)} na década de 70 houve a explosão 
 do preço da soja no mercado mundial e os agricultores e o governo beneficiavam de um 
 vantagem competitiva em relação de outros países, pois o escoamente da safra brasileira ocorre na entressafra americana, quando os preços atingem as maiores cotações, em conformidade com \cite{embrapa2022}.
@@ -306,12 +325,53 @@ estudo, \textbf{ARIMA} é um modelo paramétrico.
 
   \section{Processos Estocásticos}
   
+Podemos definir um processo estocástico como um conjunto cronológico de observações de um determinado fenômeno de forma que o seu comportamento pode ser descrito por uma ou mais distribuições de probabilidade. Conforme \cite{morettin2006analise},
 
+
+\begin{definition}
+
+Seja $T$ um conjunto arbitrário, um processo estocástico é uma família de variáveis aleatórias 
+$\left\{Z(t),\ t \in T \right\}$, tal que, $\forall t \in T$,  $Z(t)$ é uma variável aleatória.
+
+\end{definition}
+  
+\begin{figure}
+  \caption{\label{img4}Família de trajetórias de processos estocásticos.}
+    \begin{center}
+      \includegraphics[scale = 0.9]{image/img4.png}
+    \end{center}
+    \legend{Fonte: \cite{morettin2006analise}}
+\end{figure}
+
+Neste caso, um processo estocástico é uma família de variáveis aleatórias, definidas num mesmo espaço de probabilidade $(\Omega, \mathcal{A}, \mathcal{P})$, tendo o conjunto $T$, normalmente tomado como conjunto dos inteiros $\mathbb{Z} = \left\{0,\pm 1, \pm 2, \ldots \right\}$ ou conjunto dos reais $\mathbb{R}$.
+
+A Figura \ref{img3} ilustra uma interpretação de um processo estocástico, ou seja, para $t \in T,\ Z(t)$ é uma variável aleatória definida em $\Omega$, e $Z(t)$ é uma função de dois argumentos $Z(t, \omega)$, $t \in T$, $\omega \in \Omega$. Na figura, cada $t \in T$, temos uma v.a. $Z(t, \omega)$, com uma distribuição de probabilidade, é possível que a função densidade de probabilidade (fdp) no instante $t_1$ seja distinta da fdp no instante $t_2$, entre os instante $t_1$ e $t_2$ quaisquer, mas usualmente é aquela em que a fdp de $Z(t, \omega)$ é a mesma, $\forall t \in T$.
+
+
+
+\begin{figure}
+  \caption{\label{img3}Um processo estocástico interpretado como uma família de variáveis.}
+    \begin{center}
+      \includegraphics[scale = 0.9]{image/img3.png}
+    \end{center}
+    \legend{Fonte: \cite{morettin2006analise}}
+\end{figure}
+
+
+
+
+  \section{Processo Estocástico Estacionário}
 
 
 
 
   \section{Decomposição de um Série Temporal}
+  
+  
+  
+  
+  
+  \section{Modelos ARIMA}
 
 
 
@@ -332,16 +392,7 @@ O índice de Preços da \textit{commodities} Soja
 
 
 
-
 \chapter{Resultados e Discussões}
-
-A Tabela apresenta as principais medidas descritivas obtidas a partir da série mensal 
-condizente ao indicador de preços em reais da Soja (reais por saca de 60 kg) compreendido 
-no período de outubro de 1997 a outubro de 2022, proporcionanddo uma visão panorâmica do comportamento da série em estudo.
-
-
-
-
 
 <<script0, echo=FALSE, message=FALSE, warning=FALSE>>=
 require(forecast)
@@ -352,6 +403,10 @@ require(tseries)
 require(stats)
 library(readxl)
 library(tidyverse)
+library(ggfortify)
+library(magrittr)
+options(kableExtra.latex.load_packages = FALSE) 
+library(kableExtra)
 
 soja <- read_xls("C:\\Users\\Douglas\\Documents\\TRABALHO\\time-series-soja\\dataset\\soja.xls")
 
@@ -359,35 +414,36 @@ soja <- ts(soja$Preço, start = c(1997,10), frequency = 12)
 @
 
 
-A Figura \ref{script1} apresenta a série original do indicador de preço em reais da soja no intervalo de outubro de 1997 a outubro de 2022 
+A Tabela \ref{tab1} apresenta as principais medidas descritivas obtidas a partir da série mensal 
+condizente ao indicador de preços em reais da soja (reais por saca de 60 kg) compreendido 
+no período de outubro de 1997 a outubro de 2022, proporcionanddo uma visão panorâmica do comportamento da série em estudo. 
 
-<<script1, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Indicador de Preço da Soja no período de outubro de 1997 até outubro de 2022", fig.width=10,fig.height=6>>=
+<<script3, echo = FALSE>>=
+soja %>% 
+  summary( , digits = 4) %>% 
+    ts() %>% 
+      t() %>% 
+        knitr::kable( , booktabs = T, caption = "Estística Descritiva \\label{tab1}") %>%
+          kable_styling(latex_options = c("striped", "hold_position"))
+  
+@
 
-library(ggfortify)
-library(magrittr) # for piping %>%
+
+
+A Figura \ref{fig1} apresenta a série original do indicador de preço em reais da soja no intervalo de outubro de 1997 a outubro de 2022 
+
+<<script1, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Indicador de preço da soja no período de outubro de 1997 até outubro de 2022 \\label{fig1}", fig.width=7,fig.height=4, fig.pos="H">>=
+
+ # for piping %>%
 # Plot ts objects
-autoplot(soja, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)")
+autoplot(soja, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
 
 @
 
 
 <<script2, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
-soja_decomp <- stl(soja, s.window = 21)
-autoplot(soja_decomp)
+autoplot(stl(soja, s.window = 'periodic'), ts.colour = 'blue')
 @
-
-
-
-
-
-
-<<script3, echo = FALSE>>=
-
-@
-
-
-
-
 
 
 
@@ -435,28 +491,36 @@ O presente trabalho teve como objetivo estudar o comportamento do preço da Soja
 \chapter{SCRIPT R}
 % ----------------------------------------------------------
 
-<<R, eval=FALSE, warning=FALSE, message=FALSE>>=
-library(forecast)   #
-library(timeSeries) #
-library(urca)       #
-library(randtests)  #
-library(tseries)    #
-library(stats)      #
-library(readxl)     #
-library(tidyverse)  #
+<<R, eval=FALSE, warning=FALSE, message=FALSE, size="tiny">>=
+library(forecast)   #Ferramentas para exibir e analisar previsões de séries temporais univariadas.
+library(timeSeries) #Ferramentas para séries temporais financeiras.
+library(urca)       #Testes de raiz unitária e de cointegração.
+library(randtests)  #Testes de aleatoriedade não paramétricos para sequências numéricas.
+library(tseries)    #Análise de séries temporais e finanças computacionais.
+library(stats)      #Funções para cálculos estatísticos e geração de números aleatórios.
+library(readxl)     #Importe arquivos Excel para R.
+library(tidyverse)  #Conjunto de pacotes que funcionam em harmonia para data analysis.
+library(ggfortify)  #Ferramentas de plotagem unificadas.
+library(magrittr)   #Fornece o encadeamento de comandos, pipeline (%>%).
+library(kableExtra)
 
-soja <- read_xls("...dataset/soja.xls") #
+soja <- read_xls("...dataset/soja.xls") #Importar o conjunto de dados.
 
-soja <- ts(soja$Preço, start = c(1997,10), frequency = 12) #
+soja <- ts(soja$Preço, start = c(1997,10), frequency = 12) #Criar o objeto de série temporal.
 
-class(soja) # 
-as.ts(soja) # 
+class(soja) #Retornar os valores do atributo de classe de um objeto.
+as.ts(soja) #Testar se o objeto é um série temporal.
 
-### 
+###Informações descritiva da série (resumo).
 summary(soja)
 
+###Plotagem da série.
+autoplot(soja, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
 
-
+###Decomposição da série e plotagem.
+soja %>% 
+  stl(, s.window = "periodic") %>% 
+    autoplot(, ts.colour = "blue")
 
 
 

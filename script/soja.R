@@ -9,7 +9,7 @@ library(tidyverse)
 
 soja <- read_xls("C:\\Users\\Douglas\\Documents\\TRABALHO\\time-series-soja\\dataset\\soja.xls")
 
-soja <- ts(soja, start = c(1997,10), frequency = 12)
+soja <- ts(soja$Preço, start = c(1997,10), frequency = 12)
 
 class(soja)
 as.ts(soja)
@@ -117,7 +117,7 @@ par(mfrow=c(1,1))
 
 #SARIMA(0,1,1)(0,1,1)
 
-auto.arima(APlog, trace = TRUE)
+auto.arima(APlog)
 
 # realiza a verifica??o dos poss?veis modelos gerados a partir da s?rie temporal
 # em quest?o, visando ao ajuste ideal.

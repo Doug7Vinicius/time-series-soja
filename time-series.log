@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.13)  27 NOV 2022 01:17
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.13)  29 NOV 2022 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,7 +545,12 @@ Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 227.
-(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks26
+\minrowclearance=\skip256
+\rownum=\count337
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1369.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
@@ -556,7 +561,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip256
+\OuterFrameSep=\skip257
 \fb@frw=\dimen197
 \fb@frh=\dimen198
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
@@ -602,8 +607,8 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 112
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks26
-\inpenc@posthook=\toks27
+\inpenc@prehook=\toks27
+\inpenc@posthook=\toks28
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
@@ -611,16 +616,16 @@ Package inputenc Warning: inputenc package ignored with utf8 based engines.
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
-\MT@toks=\toks28
+\MT@toks=\toks29
 \MT@tempbox=\box58
-\MT@count=\count337
+\MT@count=\count338
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
 LaTeX Info: Redefining \leftprotrusion on input line 1046.
 LaTeX Info: Redefining \rightprotrusion on input line 1056.
 LaTeX Info: Redefining \textls on input line 1234.
 \MT@outer@kern=\dimen199
 LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
-\MT@listname@count=\count338
+\MT@listname@count=\count339
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-xetex.def
 File: microtype-xetex.def 2022/06/23 v3.0f Definitions specific to xetex (RS)
 LaTeX Info: Redefining \lsstyle on input line 236.
@@ -628,15 +633,45 @@ LaTeX Info: Redefining \lsstyle on input line 236.
 Package microtype Info: Loading configuration file microtype.cfg.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
-)) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/backref.sty
+)) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks30
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks31
+\thm@bodyfont=\toks32
+\thm@headfont=\toks33
+\thm@notefont=\toks34
+\thm@headpunct=\toks35
+\thm@preskip=\skip258
+\thm@postskip=\skip259
+\thm@headsep=\skip260
+\dth@everypar=\toks36
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count340
+\float@exts=\toks37
+\float@box=\box59
+\@float@everytoks=\toks38
+\@floatcapt=\box60
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/here/here.sty)
+\c@definition=\count341
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2021/02/04 v1.41 Bibliographical back referencing
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2cite.sty
 Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2abrev.sty)
-\minimumbiblabelwidth=\skip257
-\ABCIauxlen=\skip258
-\c@ABCIaux=\count339
-\c@ABCImax=\count340
+\minimumbiblabelwidth=\skip261
+\ABCIauxlen=\skip262
+\c@ABCIaux=\count342
+\c@ABCImax=\count343
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
@@ -644,58 +679,58 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\biblabelsep=\skip259
+\biblabelsep=\skip263
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks29
+\ABCItoken=\toks39
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 159.
+Package hyperref Info: Option `colorlinks' set `true' on input line 170.
 \time-series@idxfile=\write4
 \openout4 = `time-series.idx'.
 
 Writing index file time-series.idx 
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
-\g__graphics_track_int=\count341
-\l__pdf_internal_box=\box59
-\g__pdf_backend_object_int=\count342
-\g__pdf_backend_annotation_int=\count343
-\g__pdf_backend_link_int=\count344
+\g__graphics_track_int=\count344
+\l__pdf_internal_box=\box61
+\g__pdf_backend_object_int=\count345
+\g__pdf_backend_annotation_int=\count346
+\g__pdf_backend_link_int=\count347
 ) (./time-series.aux)
 \openout1 = `time-series.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 183.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 183.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 194.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 194.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 183.
-LaTeX Font Info:    ... okay on input line 183.
-Package hyperref Info: Link coloring ON on input line 183.
-\myptabbox=\box60
-\myptabboxwidth=\skip260
-LaTeX Info: Redefining \microtypecontext on input line 183.
-Package microtype Info: Applying patch `item' on input line 183.
-Package microtype Info: Applying patch `toc' on input line 183.
-Package microtype Info: Applying patch `eqnum' on input line 183.
-Package microtype Info: Applying patch `footnote' on input line 183.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 194.
+LaTeX Font Info:    ... okay on input line 194.
+Package hyperref Info: Link coloring ON on input line 194.
+\myptabbox=\box62
+\myptabboxwidth=\skip264
+LaTeX Info: Redefining \microtypecontext on input line 194.
+Package microtype Info: Applying patch `item' on input line 194.
+Package microtype Info: Applying patch `toc' on input line 194.
+Package microtype Info: Applying patch `eqnum' on input line 194.
+Package microtype Info: Applying patch `footnote' on input line 194.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -704,7 +739,7 @@ Package microtype Info: No adjustment of kerning.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 200.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 211.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -715,29 +750,40 @@ Package microtype Info: Loading generic protrusion settings for font family
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 208.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 219.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 208.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 219.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 208.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 219.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 208.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 219.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 208.
+(Font)              <12> on input line 219.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 208.
+(Font)              <8> on input line 219.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 208.
-[1
+(Font)              <6> on input line 219.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 219.
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 219.
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [1
 
 
 
@@ -760,11 +806,11 @@ Missing character: There is no – ("2013) in font ec-lmri12!
 
 ] (./time-series.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 26.
+(Font)              <14.4> on input line 28.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 26.
+(Font)              <10> on input line 28.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 28.
 ) [8
 
 ]
@@ -776,40 +822,43 @@ File: image/img1.png Graphic file (type bmp)
 ]
 File: image/img2.png Graphic file (type bmp)
 <image/img2.png>
-[10] [11
-
-] [12
+[10]
+File: image/img4.png Graphic file (type bmp)
+<image/img4.png>
+[11
 
 ]
+File: image/img3.png Graphic file (type bmp)
+<image/img3.png>
+[12] [13] [14
 
-LaTeX Warning: Reference `script1' on page 13 undefined on input line 400.
-
+]
 File: figure/script1-1.pdf Graphic file (type pdf)
 <use figure/script1-1.pdf>
 File: figure/script2-1.pdf Graphic file (type pdf)
 <use figure/script2-1.pdf>
-[13
+[15
 
-] [14] (./time-series.bbl (./time-series.brf)
+] [16] (./time-series.bbl (./time-series.brf)
 \tf@brf=\write5
 \openout5 = `time-series.brf'.
 
-[15
+[17
 
 ]
 bibitemlist
-) [16
+) [18
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 468.
+(hyperref)                removing `\uppercase' on input line 530.
 
-[17
+[19
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 475.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 537.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -817,9 +866,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 476.
-[18
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 538.
+[20
 
 ]
 \tf@lof=\write6
@@ -832,19 +881,16 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 \openout8 = `time-series.toc'.
 
 (./time-series.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `time-series.brf' has not changed.
-(rerunfilecheck)             Checksum: 47E89DAD827710CC7C1C9A650D5F930B;268.
+(rerunfilecheck)             Checksum: E4613BABB4CCFB233D1D86E5B70BC334;430.
  ) 
 Here is how much of TeX's memory you used:
- 16961 strings out of 477627
- 276900 string characters out of 5838803
- 679256 words of memory out of 5000000
- 37866 multiletter control sequences out of 15000+600000
- 535541 words of font info for 69 fonts, out of 8000000 for 9000
+ 17810 strings out of 477627
+ 289071 string characters out of 5838803
+ 688440 words of memory out of 5000000
+ 38673 multiletter control sequences out of 15000+600000
+ 541006 words of font info for 82 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  87i,12n,90p,1061b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on time-series.pdf (19 pages).
+Output written on time-series.pdf (21 pages).
