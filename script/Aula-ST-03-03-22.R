@@ -1,4 +1,4 @@
-install.packages("forecast") #para a função ndiffs
+install.packages("forecast") #para a fun??o ndiffs
 require(forecast)
 install.packages("timeSeries")
 require(timeSeries) 
@@ -21,25 +21,25 @@ summary(AP) # lembrar de sempre fazer estatatisticas descritivas
 
 # Como ajustar modelos? (Metodologia Box e Jenkins)
 
-# Como uma série temporal tem os dados coletados sequencialmente ao longo 
-# do tempo, espera-se que ela apresente correlação seriada no tempo.
-# Autocorrelação é a correlação entre os valores da série em um determinado 
-# período de tempo e os valores da mesma série em um outro momento. 
-# Os modelos de Box e Jenkins são modelos que visam 
-# captar o comportamento da correlação entre os valores da série temporal,
-# e com base nesse comportamento realizar previsões futuras.
+# Como uma s?rie temporal tem os dados coletados sequencialmente ao longo 
+# do tempo, espera-se que ela apresente correla??o seriada no tempo.
+# Autocorrela??o ? a correla??o entre os valores da s?rie em um determinado 
+# per?odo de tempo e os valores da mesma s?rie em um outro momento. 
+# Os modelos de Box e Jenkins s?o modelos que visam 
+# captar o comportamento da correla??o entre os valores da s?rie temporal,
+# e com base nesse comportamento realizar previs?es futuras.
 
 ########################################
-### Identificação do modelo
+### Identifica??o do modelo
 ########################################
 
 plot(AP, ylab = 'Passengers')
 plot(decompose(AP))
 
-acf(AP, main="Função de Autocorrelação")
+acf(AP, main="Fun??o de Autocorrela??o")
 
-ndiffs(AP) #quant de diferenciações necessárias para a série ser estacionária
-nsdiffs(AP) #quant de diferenciaçõess necessárias na parte sazonal da série
+ndiffs(AP) #quant de diferencia??es necess?rias para a s?rie ser estacion?ria
+nsdiffs(AP) #quant de diferencia??ess necess?rias na parte sazonal da s?rie
 
 APdif<- diff(AP)
 plot(APdif, ylab = 'Passengers')
@@ -55,39 +55,51 @@ plot(APlog.dif, ylab = "Passengers")
 APlog.dif2 <- diff(APlog.dif, lag=12)
 plot(APlog.dif2,ylab='Passengers')
 
-## Também podem ser utilizado os seguintes comandos:
+## Tamb?m podem ser utilizado os seguintes comandos:
 
-# A série precisa de 1 diferença simples e 1 sazonal (após sua transformação)
+# A s?rie precisa de 1 diferen?a simples e 1 sazonal (ap?s sua transforma??o)
 z = diff(diff(APlog),lag=12)
 plot(z, ylab='Passengers')
 
-# Teste para verificar estacionariedade
 
+
+
+
+
+# Teste para verificar estacionariedade
 adf.test(APlog.dif2)
-# H0: A série não é estacionária
-# H1: A série é estacionária
-# Se p-valor < menor que alfa, rejeita-se H0. Caso contrário, não rejeita-se H0.
-# A série é estacionária, pois p-valor é Menor que alfa.
+# H0: A s?rie n?o ? estacion?ria
+# H1: A s?rie ? estacion?ria
+# Se p-valor < menor que alfa, rejeita-se H0. Caso contr?rio, n?o rejeita-se H0.
+# A s?rie ? estacion?ria, pois p-valor ? Menor que alfa.
 
 #teste de Philippe Perron 
 pp.test(APlog.dif2)
 
 # Teste Kwiatkowski, Philips, Schimidt e Shin
 kpss.test(APlog.dif2,null="Level")
-# H0: A série é estacionaria
-# H1: A série não é estacionária
-# Se p-valor é menor que alfa, rejeita-se H0
-# p-valor > 0,05 - Indica que a série é estacionária ###
+# H0: A s?rie ? estacionaria
+# H1: A s?rie n?o ? estacion?ria
+# Se p-valor ? menor que alfa, rejeita-se H0
+# p-valor > 0,05 - Indica que a s?rie ? estacion?ria ###
 ur.kpss(APlog.dif2)
 
-# Teste para tendência
-cox.stuart.test(APlog.dif2)
-# H0: Não existe tendência
-# H1: Existe tendência
-# Se p-valor é menor que alfa, rejeita-se H0.
-# A série não possui tendência. 
 
-# Também pode ser usado o teste de Mann Kendall
+
+
+
+
+
+
+
+# Teste para tend?ncia
+cox.stuart.test(APlog.dif2)
+# H0: N?o existe tend?ncia
+# H1: Existe tend?ncia
+# Se p-valor ? menor que alfa, rejeita-se H0.
+# A s?rie n?o possui tend?ncia. 
+
+# Tamb?m pode ser usado o teste de Mann Kendall
 
 # Para verificar a Sazonalidade
 #Friedman
@@ -96,8 +108,8 @@ cox.stuart.test(APlog.dif2)
 #ggtsdisplay(APlog.dif2)
 
 
-# AR(p) - função de autocorrelação parcial
-# MA(q) - função de autocorrelação
+# AR(p) - fun??o de autocorrela??o parcial
+# MA(q) - fun??o de autocorrela??o
 # ARMA(p,q)
 # ARIMA(p,d,q)
 # SARIMA(1,1,1)(1,1,1)
@@ -107,14 +119,14 @@ acf(APlog.dif2)
 
 #m1 <- acf(APlog.dif2, plot = F)
 #m1$lag <- m1$lag*12
-#plot(m1, main = "ACF da série com diferença Simples e Sazonal")
+#plot(m1, main = "ACF da s?rie com diferen?a Simples e Sazonal")
 
 pacf(APlog.dif2)
 # PACF ou FACP
 
 #m2 <- pacf(APlog.dif2, plot = F)
 #m2$lag <- m2$lag*12
-#plot(m2, main = "FACP da série com diferença Simples e Sazonal")
+#plot(m2, main = "FACP da s?rie com diferen?a Simples e Sazonal")
 
 par(mfrow=c(1,1))
 
@@ -122,8 +134,8 @@ par(mfrow=c(1,1))
 
 auto.arima(APlog)
 
-# realiza a verificação dos possíveis modelos gerados a partir da série temporal
-# em questão, visando ao ajuste ideal.
+# realiza a verifica??o dos poss?veis modelos gerados a partir da s?rie temporal
+# em quest?o, visando ao ajuste ideal.
 
 
 ########################################
@@ -133,8 +145,8 @@ auto.arima(APlog)
 # SARIMA(1,1,1)(1,1,1)
 
 #Arima(AirPassengers, order = c(1,1,1), seasonal = c(1,1,1), lambda = 0) 
-#função 'Arima'(Arima com 'a' maiúsculo)do pacote forecast. O lambda = 0 permite que seja feita a transformação logarítmica
-#não é preciso diferenciar a série pois a própria função faz isso
+#fun??o 'Arima'(Arima com 'a' mai?sculo)do pacote forecast. O lambda = 0 permite que seja feita a transforma??o logar?tmica
+#n?o ? preciso diferenciar a s?rie pois a pr?pria fun??o faz isso
 #ou
 
 modelo1 <- arima(APlog, order = c(1,1,1), seasonal = list(order=c(1,1,1)))
@@ -143,8 +155,8 @@ pacf(modelo1$residuals)
 confint(modelo1)
 modelo1$coef
 
-# os paramêtros da parte AR não sazonal e sazonal são não significativos 
-# (pois contém o zero no intervalo),
+# os param?tros da parte AR n?o sazonal e sazonal s?o n?o significativos 
+# (pois cont?m o zero no intervalo),
 # logo, devem ser retirados e o modelo reestimado
 
 # SARIMA(0,1,1)(0,1,1)
@@ -159,36 +171,36 @@ acf(modelo3$residuals)
 pacf(modelo3$residuals)
 confint(modelo3)
 modelo3$coef
-# parâmetro significativo, pois não contém o zero no intervalo
-# Os parâmetros dos modelos são significantes, o que implica na necessidade da 
-# análise de seus resíduos para verificar se os modelos são adequados.
+# par?metro significativo, pois n?o cont?m o zero no intervalo
+# Os par?metros dos modelos s?o significantes, o que implica na necessidade da 
+# an?lise de seus res?duos para verificar se os modelos s?o adequados.
 
 
 ########################################
-### Verificação do modelo
+### Verifica??o do modelo
 ########################################
 
 x11()
 tsdiag(modelo3) 
-# retorna o gráfico dos resíduos padronizados, 
+# retorna o gr?fico dos res?duos padronizados, 
 # o correlograma e os
 # p-valores do testes Ljung-Box, que devem estar acima de 0 para indicar
-# que os resíduos são independentes.
+# que os res?duos s?o independentes.
 
-# H0: Autocorrelações até lag k são iguais a 0 
-#(não existe dependência linear entre os resíduos)
+# H0: Autocorrela??es at? lag k s?o iguais a 0 
+#(n?o existe depend?ncia linear entre os res?duos)
 
 Box.test(modelo3$residuals) 
 Box.test(modelo2$residuals)
 Box.test(modelo1$residuals)
 
-# P-valores superiores ao nível de significância (alpha = 0,05)
-# indicam que os resíduos se comportam como um ruído branco. Portanto, 
-# não rejeta H0
-# Logo, ao nível de 5% de significância, 
-# não rejeita-se a hipótese de que as autocorrelações não são significantes, 
-# ou seja, os resíduos se comportam como ruído branco 
-# e o modelo está ajustado adequadamente
+# P-valores superiores ao n?vel de signific?ncia (alpha = 0,05)
+# indicam que os res?duos se comportam como um ru?do branco. Portanto, 
+# n?o rejeta H0
+# Logo, ao n?vel de 5% de signific?ncia, 
+# n?o rejeita-se a hip?tese de que as autocorrela??es n?o s?o significantes, 
+# ou seja, os res?duos se comportam como ru?do branco 
+# e o modelo est? ajustado adequadamente
 
 Box.test(modelo3$residuals, type = c("Ljung-Box"))
 
@@ -198,13 +210,13 @@ qqnorm(modelo3$residuals)
 qqline(modelo3$residuals)
 shapiro.test(modelo3$residuals)
 
-#O teste Shapiro-Wilk tem como hipótese nula a normalidade. 
+#O teste Shapiro-Wilk tem como hip?tese nula a normalidade. 
 # Se p-valor < 0,05, rejeita-se a normalidade. 
-#Como p-valor > 0,05 não podemos rejeitar que os resíduos são
-#normalmente distribuídos.
+#Como p-valor > 0,05 n?o podemos rejeitar que os res?duos s?o
+#normalmente distribu?dos.
 
 
-# Critérios de comparação dos modelos 
+# Crit?rios de compara??o dos modelos 
 
 AIC(modelo1)
 AIC(modelo2)
@@ -214,10 +226,10 @@ BIC(modelo1)
 BIC(modelo2)
 BIC(modelo3)
 
-# o melhor modelo será aquele que apresentar menor AIC e BIC
+# o melhor modelo ser? aquele que apresentar menor AIC e BIC
 
 ############################
-##Previsão do modelo
+##Previs?o do modelo
 ############################
 
 accuracy(modelo3)
@@ -227,18 +239,18 @@ plot(prev)
 
 AirPassengers
 
-# prev = Cálculo com o R das previsões pontuais 
-#e intervalos de 80 e 95% de confiança 
+# prev = C?lculo com o R das previs?es pontuais 
+#e intervalos de 80 e 95% de confian?a 
 
 
-# Previsões para a série transformada
+# Previs?es para a s?rie transformada
 
 p = as.data.frame(predict(modelo3, 12, interval="prediction")); p
 
-### Predições para "12" períodos seguintes e os respectivos erros padrão ###
+### Predi??es para "12" per?odos seguintes e os respectivos erros padr?o ###
 
 
-# Intervalo de confiança 95%
+# Intervalo de confian?a 95%
 LI = exp(p$pred - 1.96*p$se)
 LI
 LS=exp(p$pred + 1.96*p$se)
@@ -246,7 +258,7 @@ LS
 
 data.frame(p$pred,LI,LS)
 
-# Previsões para a série original - segue o que diz Morettin e Toloi (2004, p.233)
+# Previs?es para a s?rie original - segue o que diz Morettin e Toloi (2004, p.233)
 
 previsoes = exp(p$pred + modelo3$sigma2/2)
 
@@ -255,10 +267,10 @@ df
 
 #print(df,row.names=FALSE)
 
-### Limite Inferior, Previsões, Limite Superior ###
+### Limite Inferior, Previs?es, Limite Superior ###
 
 ############################
-## Extraindo as previsões
+## Extraindo as previs?es
 ############################
 #Em formato .csv:
 write.csv2(df,"C://Users//Lulu//Documents//UNIR_2021//Series Temporais//previsao.csv")

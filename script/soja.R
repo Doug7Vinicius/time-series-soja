@@ -33,7 +33,7 @@ summary(soja) # lembrar de sempre fazer estatatisticas descritivas
 plot(soja, ylab = 'Preço da Soja')
 plot(decompose(soja))
 
-acf(soja, main="Função de Autocorrelação")
+acf(soja, main="Função de Autocorrelação") #correlograma 
 
 ndiffs(soja) #quant de diferencia??es necess?rias para a s?rie ser estacion?ria
 nsdiffs(soja) #quant de diferencia??ess necess?rias na parte sazonal da s?rie
@@ -41,16 +41,16 @@ nsdiffs(soja) #quant de diferencia??ess necess?rias na parte sazonal da s?rie
 APdif<- diff(soja)
 plot(APdif, ylab = 'Preço da Soja')
 
-APlog <- log(soja)
+APlog <- log(soja) # Estabilizar a variancia
 plot(APlog)
 
 par(mfrow=c(1,1))
 
-APlog.dif <- diff(APlog)
-plot(APlog.dif, ylab = "Preço da Soja")
+APlog.dif <- diff(APlog) #diferenciação log
+plot(APlog.dif, ylab = "Preço da Soja") # plotagem da série log
 
-APlog.dif2 <- diff(APlog.dif, lag=12)
-plot(APlog.dif2,ylab='Preço da Soja')
+#APlog.dif2 <- diff(APlog.dif, lag=12)  
+#plot(APlog.dif2,ylab='Preço da Soja')
 
 ## Tamb?m podem ser utilizado os seguintes comandos:
 
@@ -58,37 +58,48 @@ plot(APlog.dif2,ylab='Preço da Soja')
 z = diff(diff(APlog),lag=12)
 plot(z, ylab='Passengers')
 
-# Teste para verificar estacionariedade
 
-adf.test(APlog.dif2)
+
+# Teste para verificar estacionariedade
+adf.test(APlog.dif)
 # H0: A s?rie n?o ? estacion?ria
 # H1: A s?rie ? estacion?ria
 # Se p-valor < menor que alfa, rejeita-se H0. Caso contr?rio, n?o rejeita-se H0.
 # A s?rie ? estacion?ria, pois p-valor ? Menor que alfa.
 
 #teste de Philippe Perron 
-pp.test(APlog.dif2)
+pp.test(APlog.dif)
 
 # Teste Kwiatkowski, Philips, Schimidt e Shin
-kpss.test(APlog.dif2,null="Level")
+kpss.test(APlog.dif,null="Level")
 # H0: A s?rie ? estacionaria
 # H1: A s?rie n?o ? estacion?ria
-# Se p-valor ? menor que alfa, rejeita-se H0
-# p-valor > 0,05 - Indica que a s?rie ? estacion?ria ###
-ur.kpss(APlog.dif2)
+# Se p-valor é menor que alfa, rejeita-se H0
+# p-valor > 0,05 - Indica que a s?rie ? estacion?ria
+
+ur.kpss(APlog.dif)
+
+# Não rejeita H0, ou seja, a série é estacionária.
+
+
+
+
+
 
 # Teste para tend?ncia
-cox.stuart.test(APlog.dif2)
+cox.stuart.test(APlog.dif)
 # H0: N?o existe tend?ncia
 # H1: Existe tend?ncia
-# Se p-valor ? menor que alfa, rejeita-se H0.
-# A s?rie n?o possui tend?ncia. 
+# Se p-valor é menor que alfa, rejeita-se H0.
+# A s?rie n?o possui tend?ncia.
 
+# Não tem tendencia
+ 
 # Tamb?m pode ser usado o teste de Mann Kendall
 
-# Para verificar a Sazonalidade
-#Friedman
-#Kruskall Wallis
+ Para verificar a Sazonalidade
+ Friedman
+ Kruskall Wallis
 
 #ggtsdisplay(APlog.dif2)
 
@@ -99,15 +110,31 @@ cox.stuart.test(APlog.dif2)
 # ARIMA(p,d,q)
 # SARIMA(1,1,1)(1,1,1)
 
+
+
+
+
+
 x11()
-acf(APlog.dif2)
+acf(APlog.dif) # Correlograma da função autocorrelação
+
+
+# MA(1)
 
 #m1 <- acf(APlog.dif2, plot = F)
 #m1$lag <- m1$lag*12
 #plot(m1, main = "ACF da s?rie com diferen?a Simples e Sazonal")
 
-pacf(APlog.dif2)
+pacf(APlog.dif)
 # PACF ou FACP
+
+# AR(1)
+
+
+
+# ARIMA(p,d,q)(P,D,Q)
+
+
 
 #m2 <- pacf(APlog.dif2, plot = F)
 #m2$lag <- m2$lag*12
@@ -118,6 +145,9 @@ par(mfrow=c(1,1))
 #SARIMA(0,1,1)(0,1,1)
 
 auto.arima(APlog)
+
+
+# Teste de s
 
 # realiza a verifica??o dos poss?veis modelos gerados a partir da s?rie temporal
 # em quest?o, visando ao ajuste ideal.
@@ -134,7 +164,7 @@ auto.arima(APlog)
 #n?o ? preciso diferenciar a s?rie pois a pr?pria fun??o faz isso
 #ou
 
-modelo1 <- arima(APlog, order = c(1,1,1), seasonal = list(order=c(1,1,1)))
+modelo1 <- arima(APlog, order = c(1,1,0), seasonal = list(order=c(2,0,0)))
 acf(modelo1$residuals)
 pacf(modelo1$residuals)
 confint(modelo1)
@@ -146,10 +176,13 @@ modelo1$coef
 
 # SARIMA(0,1,1)(0,1,1)
 
-modelo2 <- arima(APlog, order = c(0,1,1), seasonal = list(order=c(0,1,1)))
+modelo2 <- arima(APlog, order = c(1,1,0), seasonal = list(order=c(0,0,0)))
 acf(modelo2$residuals)
 pacf(modelo2$residuals)
 confint(modelo2)
+
+
+
 
 modelo3 <- arima(APlog, order = c(0,1,1), seasonal = list(order=c(0,1,1)))
 acf(modelo3$residuals)
@@ -166,7 +199,7 @@ modelo3$coef
 ########################################
 
 x11()
-tsdiag(modelo3) 
+tsdiag(modelo2) 
 # retorna o gr?fico dos res?duos padronizados, 
 # o correlograma e os
 # p-valores do testes Ljung-Box, que devem estar acima de 0 para indicar
@@ -175,7 +208,7 @@ tsdiag(modelo3)
 # H0: Autocorrela??es at? lag k s?o iguais a 0 
 #(n?o existe depend?ncia linear entre os res?duos)
 
-Box.test(modelo3$residuals) 
+Box.test(modelo2$residuals) 
 Box.test(modelo2$residuals)
 Box.test(modelo1$residuals)
 
@@ -187,13 +220,13 @@ Box.test(modelo1$residuals)
 # ou seja, os res?duos se comportam como ru?do branco 
 # e o modelo est? ajustado adequadamente
 
-Box.test(modelo3$residuals, type = c("Ljung-Box"))
+Box.test(modelo2$residuals, type = c("Ljung-Box"))
 
 #checkresiduals(modelo3)
-hist(modelo3$residuals)
-qqnorm(modelo3$residuals)
-qqline(modelo3$residuals)
-shapiro.test(modelo3$residuals)
+hist(modelo2$residuals)
+qqnorm(modelo2$residuals)
+qqline(modelo2$residuals)
+shapiro.test(modelo2$residuals)
 
 #O teste Shapiro-Wilk tem como hip?tese nula a normalidade. 
 # Se p-valor < 0,05, rejeita-se a normalidade. 
@@ -217,9 +250,9 @@ BIC(modelo3)
 ##Previs?o do modelo
 ############################
 
-accuracy(modelo3)
+accuracy(modelo2)
 
-prev <- forecast(modelo3, h=12)
+prev <- forecast(modelo2, h=12)
 plot(prev)
 
 AirPassengers
@@ -230,7 +263,7 @@ AirPassengers
 
 # Previs?es para a s?rie transformada
 
-p = as.data.frame(predict(modelo3, 12, interval="prediction")); p
+p = as.data.frame(predict(modelo2, 12, interval="prediction")); p
 
 ### Predi??es para "12" per?odos seguintes e os respectivos erros padr?o ###
 

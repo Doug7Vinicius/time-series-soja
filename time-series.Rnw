@@ -38,6 +38,8 @@
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage{here}
+
+
 % ---
 \theoremstyle{definition}
 \newtheorem{definition}{Definição}[section]
@@ -218,25 +220,25 @@
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-\begin{siglas}
-  \item [EMBRAPA] Empresa Brasileira de Pesquisa Agropecuária
-  \item [CEPEA]   Centro de Estudos Avançados em Economia Aplicada
-  \item [CONAB  ] Companhia Nacional de Abastecimento
-  \item [v.a.   ] Variável aleatória
-  \item [fdp    ] Função densidade de probabilidade
-\end{siglas}
+%\begin{siglas}
+%  \item [EMBRAPA] Empresa Brasileira de Pesquisa Agropecuária
+%  \item [CEPEA]   Centro de Estudos Avançados em Economia Aplicada
+%  \item [CONAB  ] Companhia Nacional de Abastecimento
+%  \item [v.a.   ] Variável aleatória
+%  \item [fdp    ] Função densidade de probabilidade
+%\end{siglas}
 % ---
 
 % ---
 % inserir lista de símbolos
 % ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
   
-\end{simbolos}
+%\end{simbolos}
 % ---
 
 % ---
@@ -433,21 +435,42 @@ soja %>%
 A Figura \ref{fig1} apresenta a série original do indicador de preço em reais da soja no intervalo de outubro de 1997 a outubro de 2022 
 
 <<script1, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Indicador de preço da soja no período de outubro de 1997 até outubro de 2022 \\label{fig1}", fig.width=7,fig.height=4, fig.pos="H">>=
-
- # for piping %>%
-# Plot ts objects
-autoplot(soja, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
-
+soja %>% 
+  autoplot(, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
 @
+
+
 
 
 <<script2, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
-autoplot(stl(soja, s.window = 'periodic'), ts.colour = 'blue')
+soja %>% 
+  stl(, s.window = "periodic") %>% 
+    autoplot(, ts.colour = "blue")
 @
 
 
 
 
+
+<<script4, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
+soja %>% 
+  acf(, main = "Função de Autocorrelação")
+@
+
+
+
+
+
+<<script5, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
+SJdif <- diff(soja) 
+autoplot(SJdif, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
+@
+
+
+<<script6, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
+SJlog <- log(soja) 
+autoplot(SJlog, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
+@
 
 
 
@@ -492,35 +515,37 @@ O presente trabalho teve como objetivo estudar o comportamento do preço da Soja
 % ----------------------------------------------------------
 
 <<R, eval=FALSE, warning=FALSE, message=FALSE, size="tiny">>=
-library(forecast)   #Ferramentas para exibir e analisar previsões de séries temporais univariadas.
-library(timeSeries) #Ferramentas para séries temporais financeiras.
-library(urca)       #Testes de raiz unitária e de cointegração.
-library(randtests)  #Testes de aleatoriedade não paramétricos para sequências numéricas.
-library(tseries)    #Análise de séries temporais e finanças computacionais.
-library(stats)      #Funções para cálculos estatísticos e geração de números aleatórios.
-library(readxl)     #Importe arquivos Excel para R.
-library(tidyverse)  #Conjunto de pacotes que funcionam em harmonia para data analysis.
-library(ggfortify)  #Ferramentas de plotagem unificadas.
-library(magrittr)   #Fornece o encadeamento de comandos, pipeline (%>%).
-library(kableExtra)
+library(forecast)   # Ferramentas para exibir e analisar previsões de séries temporais univariadas.
+library(timeSeries) # Ferramentas para séries temporais financeiras.
+library(urca)       # Testes de raiz unitária e de cointegração.
+library(randtests)  # Testes de aleatoriedade não paramétricos para sequências numéricas.
+library(tseries)    # Análise de séries temporais e finanças computacionais.
+library(stats)      # Funções para cálculos estatísticos e geração de números aleatórios.
+library(readxl)     # Importe arquivos Excel para R.
+library(tidyverse)  # Conjunto de pacotes que funcionam em harmonia para data analysis.
+library(ggfortify)  # Ferramentas de plotagem unificadas.
+library(magrittr)   # Fornece o encadeamento de comandos, pipeline (%>%).
+library(kableExtra) # Gerador de tabelas.
 
-soja <- read_xls("...dataset/soja.xls") #Importar o conjunto de dados.
+soja <- read_xls("...dataset/soja.xls") # Importar o conjunto de dados.
 
-soja <- ts(soja$Preço, start = c(1997,10), frequency = 12) #Criar o objeto de série temporal.
+soja <- ts(soja$Preço, start = c(1997,10), frequency = 12) # Criar o objeto de série temporal.
 
-class(soja) #Retornar os valores do atributo de classe de um objeto.
-as.ts(soja) #Testar se o objeto é um série temporal.
+class(soja) # Retornar os valores do atributo de classe de um objeto.
+as.ts(soja) # Testar se o objeto é um série temporal.
 
-###Informações descritiva da série (resumo).
+### Informações descritiva da série (resumo).
 summary(soja)
 
-###Plotagem da série.
+### Plotagem da série original.
 autoplot(soja, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
 
-###Decomposição da série e plotagem.
+### Decomposição da série e plotagem.
 soja %>% 
   stl(, s.window = "periodic") %>% 
     autoplot(, ts.colour = "blue")
+
+### 
 
 
 

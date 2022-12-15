@@ -88,6 +88,8 @@
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage{here}
+
+
 % ---
 \theoremstyle{definition}
 \newtheorem{definition}{Definição}[section]
@@ -269,25 +271,25 @@
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-\begin{siglas}
-  \item [EMBRAPA] Empresa Brasileira de Pesquisa Agropecuária
-  \item [CEPEA]   Centro de Estudos Avançados em Economia Aplicada
-  \item [CONAB  ] Companhia Nacional de Abastecimento
-  \item [v.a.   ] Variável aleatória
-  \item [fdp    ] Função densidade de probabilidade
-\end{siglas}
+%\begin{siglas}
+%  \item [EMBRAPA] Empresa Brasileira de Pesquisa Agropecuária
+%  \item [CEPEA]   Centro de Estudos Avançados em Economia Aplicada
+%  \item [CONAB  ] Companhia Nacional de Abastecimento
+%  \item [v.a.   ] Variável aleatória
+%  \item [fdp    ] Função densidade de probabilidade
+%\end{siglas}
 % ---
 
 % ---
 % inserir lista de símbolos
 % ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
+%\begin{simbolos}
+%  \item[$ \Gamma $] Letra grega Gama
+%  \item[$ \Lambda $] Lambda
+%  \item[$ \zeta $] Letra grega minúscula zeta
+%  \item[$ \in $] Pertence
   
-\end{simbolos}
+%\end{simbolos}
 % ---
 
 % ---
@@ -480,6 +482,8 @@ A Figura \ref{fig1} apresenta a série original do indicador de preço em reais 
 \end{knitrout}
 
 
+
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/script2-1} \end{figure}
@@ -489,6 +493,29 @@ A Figura \ref{fig1} apresenta a série original do indicador de preço em reais 
 
 
 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/script4-1} \end{figure}
+
+\end{knitrout}
+
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/script5-1} \end{figure}
+
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/script6-1} \end{figure}
+
+\end{knitrout}
 
 
 
@@ -535,35 +562,37 @@ O presente trabalho teve como objetivo estudar o comportamento do preço da Soja
 \begin{knitrout}\tiny
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(forecast)}   \hlcom{#Ferramentas para exibir e analisar previsões de séries temporais univariadas.}
-\hlkwd{library}\hlstd{(timeSeries)} \hlcom{#Ferramentas para séries temporais financeiras.}
-\hlkwd{library}\hlstd{(urca)}       \hlcom{#Testes de raiz unitária e de cointegração.}
-\hlkwd{library}\hlstd{(randtests)}  \hlcom{#Testes de aleatoriedade não paramétricos para sequências numéricas.}
-\hlkwd{library}\hlstd{(tseries)}    \hlcom{#Análise de séries temporais e finanças computacionais.}
-\hlkwd{library}\hlstd{(stats)}      \hlcom{#Funções para cálculos estatísticos e geração de números aleatórios.}
-\hlkwd{library}\hlstd{(readxl)}     \hlcom{#Importe arquivos Excel para R.}
-\hlkwd{library}\hlstd{(tidyverse)}  \hlcom{#Conjunto de pacotes que funcionam em harmonia para data analysis.}
-\hlkwd{library}\hlstd{(ggfortify)}  \hlcom{#Ferramentas de plotagem unificadas.}
-\hlkwd{library}\hlstd{(magrittr)}   \hlcom{#Fornece o encadeamento de comandos, pipeline (%>%).}
-\hlkwd{library}\hlstd{(kableExtra)}
+\hlkwd{library}\hlstd{(forecast)}   \hlcom{# Ferramentas para exibir e analisar previsões de séries temporais univariadas.}
+\hlkwd{library}\hlstd{(timeSeries)} \hlcom{# Ferramentas para séries temporais financeiras.}
+\hlkwd{library}\hlstd{(urca)}       \hlcom{# Testes de raiz unitária e de cointegração.}
+\hlkwd{library}\hlstd{(randtests)}  \hlcom{# Testes de aleatoriedade não paramétricos para sequências numéricas.}
+\hlkwd{library}\hlstd{(tseries)}    \hlcom{# Análise de séries temporais e finanças computacionais.}
+\hlkwd{library}\hlstd{(stats)}      \hlcom{# Funções para cálculos estatísticos e geração de números aleatórios.}
+\hlkwd{library}\hlstd{(readxl)}     \hlcom{# Importe arquivos Excel para R.}
+\hlkwd{library}\hlstd{(tidyverse)}  \hlcom{# Conjunto de pacotes que funcionam em harmonia para data analysis.}
+\hlkwd{library}\hlstd{(ggfortify)}  \hlcom{# Ferramentas de plotagem unificadas.}
+\hlkwd{library}\hlstd{(magrittr)}   \hlcom{# Fornece o encadeamento de comandos, pipeline (%>%).}
+\hlkwd{library}\hlstd{(kableExtra)} \hlcom{# Gerador de tabelas.}
 
-\hlstd{soja} \hlkwb{<-} \hlkwd{read_xls}\hlstd{(}\hlstr{"...dataset/soja.xls"}\hlstd{)} \hlcom{#Importar o conjunto de dados.}
+\hlstd{soja} \hlkwb{<-} \hlkwd{read_xls}\hlstd{(}\hlstr{"...dataset/soja.xls"}\hlstd{)} \hlcom{# Importar o conjunto de dados.}
 
-\hlstd{soja} \hlkwb{<-} \hlkwd{ts}\hlstd{(soja}\hlopt{$}\hlstd{Preço,} \hlkwc{start} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1997}\hlstd{,}\hlnum{10}\hlstd{),} \hlkwc{frequency} \hlstd{=} \hlnum{12}\hlstd{)} \hlcom{#Criar o objeto de série temporal.}
+\hlstd{soja} \hlkwb{<-} \hlkwd{ts}\hlstd{(soja}\hlopt{$}\hlstd{Preço,} \hlkwc{start} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1997}\hlstd{,}\hlnum{10}\hlstd{),} \hlkwc{frequency} \hlstd{=} \hlnum{12}\hlstd{)} \hlcom{# Criar o objeto de série temporal.}
 
-\hlkwd{class}\hlstd{(soja)} \hlcom{#Retornar os valores do atributo de classe de um objeto.}
-\hlkwd{as.ts}\hlstd{(soja)} \hlcom{#Testar se o objeto é um série temporal.}
+\hlkwd{class}\hlstd{(soja)} \hlcom{# Retornar os valores do atributo de classe de um objeto.}
+\hlkwd{as.ts}\hlstd{(soja)} \hlcom{# Testar se o objeto é um série temporal.}
 
-\hlcom{###Informações descritiva da série (resumo).}
+\hlcom{### Informações descritiva da série (resumo).}
 \hlkwd{summary}\hlstd{(soja)}
 
-\hlcom{###Plotagem da série.}
+\hlcom{### Plotagem da série original.}
 \hlkwd{autoplot}\hlstd{(soja,} \hlkwc{xlab} \hlstd{=} \hlstr{"Tempo"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"Valor (Reais por saca de 60 kg)"}\hlstd{,} \hlkwc{ts.colour} \hlstd{=} \hlstr{'blue'}\hlstd{)}
 
-\hlcom{###Decomposição da série e plotagem.}
+\hlcom{### Decomposição da série e plotagem.}
 \hlstd{soja} \hlopt{%>%}
   \hlkwd{stl}\hlstd{(,} \hlkwc{s.window} \hlstd{=} \hlstr{"periodic"}\hlstd{)} \hlopt{%>%}
     \hlkwd{autoplot}\hlstd{(,} \hlkwc{ts.colour} \hlstd{=} \hlstr{"blue"}\hlstd{)}
+
+\hlcom{### }
 \end{alltt}
 \end{kframe}
 \end{knitrout}
