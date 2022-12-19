@@ -9,7 +9,7 @@ library(tidyverse)
 
 soja <- read_xls("C:\\Users\\Douglas\\Documents\\TRABALHO\\time-series-soja\\dataset\\soja.xls")
 
-soja <- ts(soja$Preço, start = c(1997,10), frequency = 12)
+soja <- ts(soja$Preço, start = c(1997,10), end = c(2021,12), frequency = 12)
 
 class(soja)
 as.ts(soja)
@@ -38,11 +38,13 @@ acf(soja, main="Função de Autocorrelação") #correlograma
 ndiffs(soja) #quant de diferencia??es necess?rias para a s?rie ser estacion?ria
 nsdiffs(soja) #quant de diferencia??ess necess?rias na parte sazonal da s?rie
 
-APdif<- diff(soja)
-plot(APdif, ylab = 'Preço da Soja')
 
-APlog <- log(soja) # Estabilizar a variancia
-plot(APlog)
+Soja_dif <- diff(soja)
+plot(Soja_dif, ylab = 'Preço da Soja')
+
+Soja_log <- log(soja) # Estabilizar a variancia
+plot(Soja_log)
+
 
 par(mfrow=c(1,1))
 
@@ -61,23 +63,23 @@ plot(z, ylab='Passengers')
 
 
 # Teste para verificar estacionariedade
-adf.test(APlog.dif)
+adf.test(Soja_dif)
 # H0: A s?rie n?o ? estacion?ria
 # H1: A s?rie ? estacion?ria
 # Se p-valor < menor que alfa, rejeita-se H0. Caso contr?rio, n?o rejeita-se H0.
 # A s?rie ? estacion?ria, pois p-valor ? Menor que alfa.
 
 #teste de Philippe Perron 
-pp.test(APlog.dif)
+pp.test(Soja.log.dif1)
 
 # Teste Kwiatkowski, Philips, Schimidt e Shin
-kpss.test(APlog.dif,null="Level")
+kpss.test(Soja_dif,null="Level")
 # H0: A s?rie ? estacionaria
 # H1: A s?rie n?o ? estacion?ria
 # Se p-valor é menor que alfa, rejeita-se H0
 # p-valor > 0,05 - Indica que a s?rie ? estacion?ria
 
-ur.kpss(APlog.dif)
+ur.kpss(Soja_dif)
 
 # Não rejeita H0, ou seja, a série é estacionária.
 
@@ -87,7 +89,7 @@ ur.kpss(APlog.dif)
 
 
 # Teste para tend?ncia
-cox.stuart.test(APlog.dif)
+cox.stuart.test(Soja_dif)
 # H0: N?o existe tend?ncia
 # H1: Existe tend?ncia
 # Se p-valor é menor que alfa, rejeita-se H0.
@@ -115,8 +117,8 @@ cox.stuart.test(APlog.dif)
 
 
 
-x11()
-acf(APlog.dif) # Correlograma da função autocorrelação
+
+acf(Soja_dif) # Correlograma da função autocorrelação
 
 
 # MA(1)
@@ -125,7 +127,7 @@ acf(APlog.dif) # Correlograma da função autocorrelação
 #m1$lag <- m1$lag*12
 #plot(m1, main = "ACF da s?rie com diferen?a Simples e Sazonal")
 
-pacf(APlog.dif)
+pacf(Soja_dif)
 # PACF ou FACP
 
 # AR(1)
@@ -144,13 +146,38 @@ par(mfrow=c(1,1))
 
 #SARIMA(0,1,1)(0,1,1)
 
-auto.arima(APlog)
+auto.arima(Soja_log)
 
 
 # Teste de s
 
 # realiza a verifica??o dos poss?veis modelos gerados a partir da s?rie temporal
 # em quest?o, visando ao ajuste ideal.
+
+#### Estimando o modelo
+modelo1 <- arima(Soja_log, order = c(1,1,0), seasonal = list(order=c(2,0,0)))
+acf(modelo1$residuals)
+pacf(modelo1$residuals)
+confint(modelo1)
+modelo1$coef
+
+modelo2 <- arima(Soja_log, order = c(1,0,0), seasonal = list(order=c(1,0,0)))
+acf(modelo2$residuals)
+pacf(modelo2$residuals)
+confint(modelo2)
+modelo2$coef
+
+modelo3 <- arima(Soja_log, order = c(1,0,0), seasonal = list(order=c(1,1,0)))
+acf(modelo3$residuals)
+pacf(modelo3$residuals)
+confint(modelo3)
+modelo3$coef
+
+modelo4 <- arima(Soja_log, order = c(1,1,0), seasonal = list(order=c(2,1,0)))
+acf(modelo4$residuals)
+pacf(modelo4$residuals)
+confint(modelo4)
+modelo4$coef
 
 
 ########################################
@@ -164,11 +191,12 @@ auto.arima(APlog)
 #n?o ? preciso diferenciar a s?rie pois a pr?pria fun??o faz isso
 #ou
 
-modelo1 <- arima(APlog, order = c(1,1,0), seasonal = list(order=c(2,0,0)))
-acf(modelo1$residuals)
-pacf(modelo1$residuals)
-confint(modelo1)
-modelo1$coef
+modelo <- arima(Soja_log, order = c(1,1,0), seasonal = list(order=c(2,0,0)))
+acf(modelo$residuals)
+pacf(modelo$residuals)
+confint(modelo)
+modelo$coef
+
 
 # os param?tros da parte AR n?o sazonal e sazonal s?o n?o significativos 
 # (pois cont?m o zero no intervalo),
@@ -189,6 +217,8 @@ acf(modelo3$residuals)
 pacf(modelo3$residuals)
 confint(modelo3)
 modelo3$coef
+
+
 # par?metro significativo, pois n?o cont?m o zero no intervalo
 # Os par?metros dos modelos s?o significantes, o que implica na necessidade da 
 # an?lise de seus res?duos para verificar se os modelos s?o adequados.

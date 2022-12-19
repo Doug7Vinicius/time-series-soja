@@ -4,4 +4,11 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Produção de Soja por ano no Brasil de 1994 a 2020}}{8}{figure.1.2}%
 \contentsline {figure}{\numberline {3}{\ignorespaces Família de trajetórias de processos estocásticos.}}{10}{figure.2.3}%
 \contentsline {figure}{\numberline {4}{\ignorespaces Um processo estocástico interpretado como uma família de variáveis.}}{10}{figure.2.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Indicador de preço da soja no período de outubro de 1997 até outubro de 2022 }}{13}{figure.4.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Processo geral de previsão usando um modelo ARIMA.}}{12}{figure.2.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Indicador de preço da soja no período de outubro de 1997 até outubro de 2022 }}{14}{figure.4.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Decomposição da série de preço da soja}}{15}{figure.4.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Gráfico de Boxplot, da série distribúida entre os meses (período de 10/1997 a 10/2022)}}{16}{figure.4.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Correlograma da série}}{17}{figure.4.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Gráficos}}{18}{figure.4.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Gráficos de resíduos para o modelo ARIMA(1,1,0)(2,0,0)}}{21}{figure.4.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Previsão para o indíce de preço da soja}}{21}{figure.4.12}%

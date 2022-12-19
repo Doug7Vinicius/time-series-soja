@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.4)  15 DEC 2022 02:13
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.18)  18 DEC 2022 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **C:/Users/Douglas/Documents/TRABALHO/time-series-soja/time-series.tex
 (c:/Users/Douglas/Documents/TRABALHO/time-series-soja/time-series.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2022-11-02> (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2.cls
+L3 programming layer <2022-12-17> (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2.cls
 Document Class: abntex2 2018/11/24 v-1.9.7 abnTeX2
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
@@ -661,17 +661,89 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box59
 \@float@everytoks=\toks38
 \@floatcapt=\box60
-) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/here/here.sty)
-\c@definition=\count341
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/here/here.sty) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip262
+For additional information on amsmath, use the `?' option.
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks39
+\ex@=\dimen256
+)) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen257
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count341
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count342
+\leftroot@=\count343
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count344
+\DOTSCASE@=\count345
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box61
+\strutbox@=\box62
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen258
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count346
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count347
+\dotsspace@=\muskip17
+\c@parentequation=\count348
+\dspbrk@lvl=\count349
+\tag@help=\toks40
+\row@=\count350
+\column@=\count351
+\maxfields@=\count352
+\andhelp@=\toks41
+\eqnshift@=\dimen259
+\alignsep@=\dimen260
+\tagshift@=\dimen261
+\tagwidth@=\dimen262
+\totwidth@=\dimen263
+\lineht@=\dimen264
+\@envbody=\toks42
+\multlinegap=\skip263
+\multlinetaggap=\skip264
+\mathdisplay@stack=\toks43
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+(c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supported.
+
+))
+\c@definition=\count353
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2021/02/04 v1.41 Bibliographical back referencing
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2cite.sty
 Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2abrev.sty)
-\minimumbiblabelwidth=\skip262
-\ABCIauxlen=\skip263
-\c@ABCIaux=\count342
-\c@ABCImax=\count343
+\minimumbiblabelwidth=\skip265
+\ABCIauxlen=\skip266
+\c@ABCIaux=\count354
+\c@ABCImax=\count355
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
@@ -679,12 +751,12 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\biblabelsep=\skip264
+\biblabelsep=\skip267
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks39
+\ABCItoken=\toks44
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 172.
+Package hyperref Info: Option `colorlinks' set `true' on input line 174.
 \time-series@idxfile=\write4
 \openout4 = `time-series.idx'.
 
@@ -695,46 +767,50 @@ Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbat
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-10-26 L3 backend support: XeTeX
-\g__graphics_track_int=\count344
-\l__pdf_internal_box=\box61
-\g__pdf_backend_object_int=\count345
-\g__pdf_backend_annotation_int=\count346
-\g__pdf_backend_link_int=\count347
-) (./time-series.aux)
+\g__graphics_track_int=\count356
+\l__pdf_internal_box=\box63
+\g__pdf_backend_object_int=\count357
+\g__pdf_backend_annotation_int=\count358
+\g__pdf_backend_link_int=\count359
+) (./time-series.aux
+
+LaTeX Warning: Label `fig4' multiply defined.
+
+)
 \openout1 = `time-series.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 196.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 196.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 198.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 196.
-LaTeX Font Info:    ... okay on input line 196.
-Package hyperref Info: Link coloring ON on input line 196.
-\myptabbox=\box62
-\myptabboxwidth=\skip265
-LaTeX Info: Redefining \microtypecontext on input line 196.
-Package microtype Info: Applying patch `item' on input line 196.
-Package microtype Info: Applying patch `toc' on input line 196.
-Package microtype Info: Applying patch `eqnum' on input line 196.
-Package microtype Info: Applying patch `footnote' on input line 196.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+Package hyperref Info: Link coloring ON on input line 198.
+\myptabbox=\box64
+\myptabboxwidth=\skip268
+LaTeX Info: Redefining \microtypecontext on input line 198.
+Package microtype Info: Applying patch `item' on input line 198.
+Package microtype Info: Applying patch `toc' on input line 198.
+Package microtype Info: Applying patch `eqnum' on input line 198.
+Package microtype Info: Applying patch `footnote' on input line 198.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -743,7 +819,7 @@ Package microtype Info: No adjustment of kerning.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 213.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 215.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -754,35 +830,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 221.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 223.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 221.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 223.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 221.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 223.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 221.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 223.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 221.
+(Font)              <12> on input line 223.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 221.
+(Font)              <8> on input line 223.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 221.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 221.
+(Font)              <6> on input line 223.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 223.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 221.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 223.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -804,11 +880,11 @@ Missing character: There is no – ("2013) in font ec-lmri12!
 
 ] (./time-series.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 26.
+(Font)              <14.4> on input line 24.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 26.
+(Font)              <10> on input line 24.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 24.
 ) [6
 
 ]
@@ -828,41 +904,27 @@ File: image/img4.png Graphic file (type bmp)
 ]
 File: image/img3.png Graphic file (type bmp)
 <image/img3.png>
-[10] [11] [12
+[10]
+File: image/img5.png Graphic file (type bmp)
+<image/img5.png>
+[11] [12] [13
 
 ]
 File: figure/script1-1.pdf Graphic file (type pdf)
 <use figure/script1-1.pdf>
 File: figure/script2-1.pdf Graphic file (type pdf)
 <use figure/script2-1.pdf>
-File: figure/script4-1.pdf Graphic file (type pdf)
-<use figure/script4-1.pdf>
+[14
+
+]
 File: figure/script5-1.pdf Graphic file (type pdf)
 <use figure/script5-1.pdf>
+[15]
+File: figure/script4-1.pdf Graphic file (type pdf)
+<use figure/script4-1.pdf>
 File: figure/script6-1.pdf Graphic file (type pdf)
 <use figure/script6-1.pdf>
-[13
-
-] [14] [15] (./time-series.bbl (./time-series.brf)
-\tf@brf=\write5
-\openout5 = `time-series.brf'.
-
-[16
-
-]
-bibitemlist
-) [17
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 557.
-
-[18
-
-
-]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 564.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 535.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -870,9 +932,54 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 537.
+
+Overfull \hbox (1.94322pt too wide) in paragraph at lines 556--556
+[]\T1/lmtt/m/n/12 ## Dickey-Fuller Z(alpha) = -186.81, Truncation lag parameter = 5, p-value[] 
+ []
+
+[16] [17] [18]
+Overfull \hbox (1.94322pt too wide) in paragraph at lines 607--607
+[]\T1/lmtt/m/n/12 ## Dickey-Fuller Z(alpha) = -186.81, Truncation lag parameter = 5, p-value[] 
+ []
+
+[19]
+Overfull \hbox (51.35025pt too wide) in paragraph at lines 648--648
+[]\T1/lmtt/m/n/12 ##                         ME       RMSE        MAE         MPE     MAPE      MASE[] 
+ []
+
+
+Overfull \hbox (51.30122pt too wide) in paragraph at lines 649--649
+[]\T1/lmtt/m/n/12 ## Training set -4.198801e-05 0.05550114 0.04369263 -0.01376519 1.172031 0.2158349[] 
+ []
+
+File: figure/script11-1.pdf Graphic file (type pdf)
+<use figure/script11-1.pdf>
+File: figure/script12-1.pdf Graphic file (type pdf)
+<use figure/script12-1.pdf>
+[20] [21] (./time-series.bbl (./time-series.brf)
+\tf@brf=\write5
+\openout5 = `time-series.brf'.
+
+[22
+
+]
+bibitemlist
+) [23
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\uppercase' on input line 724.
+
+[24
+
+
+]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 565.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 588.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 732.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 755.
 (c:/Users/Douglas/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -883,7 +990,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package microtype Info: Character `texttrademark ' is missing
 (microtype)             in font `TS1/lmtt/m/n/8'.
 (microtype)             Ignoring protrusion settings for this character.
-[19
+[25
 
 ]
 \tf@lof=\write6
@@ -896,16 +1003,19 @@ Package microtype Info: Character `texttrademark ' is missing
 \openout8 = `time-series.toc'.
 
 (./time-series.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `time-series.brf' has not changed.
-(rerunfilecheck)             Checksum: 60E1E76ED5BD0FD115DE12D5D44DCBA7;426.
+(rerunfilecheck)             Checksum: 17ADF6AF91BDBEBE9601B6EE94AEA0B9;657.
  ) 
 Here is how much of TeX's memory you used:
- 17933 strings out of 477624
- 292088 string characters out of 5838764
- 688751 words of memory out of 5000000
- 38786 multiletter control sequences out of 15000+600000
- 541312 words of font info for 83 fonts, out of 8000000 for 9000
+ 18765 strings out of 478761
+ 305666 string characters out of 5848475
+ 1852973 words of memory out of 5000000
+ 38449 multiletter control sequences out of 15000+600000
+ 588283 words of font info for 91 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 87i,12n,90p,1061b,497s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,17n,90p,1196b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on time-series.pdf (20 pages).
+Output written on time-series.pdf (26 pages).

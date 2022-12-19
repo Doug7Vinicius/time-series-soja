@@ -39,6 +39,8 @@
 \usepackage{float}
 \usepackage{here}
 
+\usepackage{amsmath}
+\usepackage{epstopdf}
 
 % ---
 \theoremstyle{definition}
@@ -192,13 +194,11 @@
 % ---
 % --- resumo em português--
 \begin{resumo} 
-  O objetivo deste trabalho tem como propor a análise do comportamento dos preçõs
-  médios mensais da da \textit{commodities} soja 
-  por meio da metodologia Box \& Jenkins. Com isso foram utilizados .
+O objetivo deste trabalho tem como propor a análise do comportamento do preço médio mensal da saca de 60kg (R\$/sc), bem como a previsão aplicada a modelagem ARIMA (Modelo Médio Integrado Auto-Regressivo) da \textit{commodities} de soja no Brasil. Os dados de séries foram coletados no site CEPEA (Centro de Estudos Avançados em Economia Aplicada) da metodologia soja CEPEA/ESALQ - PARANÁ, entre os intervalos de agosto de 1997 a outubro de 2022. Empregamos a metodoliga Box-Jenkins (1976) com o designo de encontrar o melhor ajuste do modelo de série temporal com base histórica dos preços. Ademais, foi utilizado uma função automatizada do pacote "forecast" do Sofware R para obter o modelo ideal para série. Assim, o modelo \textbf{ARIMA}(1,1,0)(2,0,0) foi o melhor para prever o preço médio mensal de soja. Os resultados ilustram um tendência crescente nos preços e na decomposição da série viu-se que há sazonalidade. Assim, este estudo pode fornecer uma abordagem como método de apoio à tomada de decisão para formular a previsão de preço da soja para o mercado brasileiro.
   \vspace{\onelineskip} 
   \noindent
   
-  \textbf{Palavras-chaves}: Modelo ARIMA, Preço da Soja, Séries Temporais. 
+  \textbf{Palavras-chaves}: Séries Temporais, Modelo ARIMA, Preços da Soja.
 \end{resumo}
 
 % ---
@@ -359,38 +359,43 @@ A Figura \ref{img3} ilustra uma interpretação de um processo estocástico, ou 
     \legend{Fonte: \cite{morettin2006analise}}
 \end{figure}
 
-
-
-
-  \section{Processo Estocástico Estacionário}
-
-
-
-
-  \section{Decomposição de um Série Temporal}
-  
-  
-  
-  
   
   \section{Modelos ARIMA}
+  
+Segundo \cite{martins2014comparison} a metodologia Box-Jenkins possibilita detectar distintos modelos ARIMA e entre eles: o modelo Autoregressivo de ordem p (AR), o modelo de Médias Móveis de ordem q (MA), o modelo Autoregressivo de Médias Móveis de ordem p e q (ARMA), o modelo Autoregressivo Integrado de Médias Móveis, de ordem p, q contendo diferença d (ARIMA) que, apresenta como o principal caso contido nessa técnica. Segundo Ramser et al. (2015), eles apresentam conduta estacionária nos modelos AR(p) e MA(p), assim como a junção destes, o modelo ARMA(p,q).
 
+O modelo ARIMA (p,d,q) é o efeito do uso de diferenciação na séries onde a média é variante,
+transformando-os estacionárias. Os modelos estacionários e os não estacionários, diferenciam-se
+pela quantidade de diferenças necessárias para estabilizar a série, simbolizado pela letra d \cite{martins2014comparison}.
 
+Ao ajustar um modelo ARIMA a um conjunto de dados de séries temporais, o procedimento a seguir fornece uma abordagem geral útil \cite{hyndman2018forecasting}.
 
+\begin{itemize}
+  \item Plote os dados e identifique quaisquer observações incomuns;
+  \item Se necessário, transforme os dados (usando uma transformação Box-Cox) para estabilizar a variação;
+  \item Se os dados não forem estacionários, tome as primeiras diferenças dos dados até que os dados sejam estacionários;
+  \item Examine o ACF/PACF: É um ARIMA(p,d,0) ou ARIMA(0,d,q) modelo apropriado?;
+  \item Experimente o(s) modelo(s) escolhido(s) e use o AICc para procurar um modelo melhor;
+  \item Verifique os resíduos do modelo escolhido plotando o ACF dos resíduos e fazendo um teste portmanteau dos resíduos. Se eles não se parecerem com ruído branco, tente um modelo modificado;
+  \item Quando os resíduos parecerem ruído branco, calcule as previsões.
+\end{itemize}
 
+Este processo é usado pela função "auto.arima" do pacote "forecast" Software R. Resumido na Figura \ref{img13}.
+
+\begin{figure}
+  \caption{\label{img13}Processo geral de previsão usando um modelo ARIMA.}
+    \begin{center}
+      \includegraphics[width=12cm]{image/img5.png}
+    \end{center}
+    \legend{Fonte: \cite{hyndman2018forecasting}}
+\end{figure}
 
 \chapter{Metodologia}
 
-Por 
+Para obtenção das análises estatísticas dos dados, fez-se o uso do \textit{software} \textbf{R} (versão 4.2.1). Com posse dos dados, foi realizada uma análise inicial dos dados para identificar o comportamento da série temporal e analisar suas características  quanto tendência, sazonalidade, aleatoriedade e existência de ruídos.
 
 
-Para obtenção das análises estatísticas dos dados, fez-se o uso do \textit{software} \textbf{R} versão 4.2.1
-
-
-A 
-
-
-O índice de Preços da \textit{commodities} Soja 
+O índice de Preços da \textit{commodities} Soja foi adquirido no site do CEPEA (Centro de Estudos Avançados em Economia Aplicada), com intervalo de outubro de 1997 até outubro de 2022.
 
 
 
@@ -418,7 +423,8 @@ soja <- ts(soja$Preço, start = c(1997,10), frequency = 12)
 
 A Tabela \ref{tab1} apresenta as principais medidas descritivas obtidas a partir da série mensal 
 condizente ao indicador de preços em reais da soja (reais por saca de 60 kg) compreendido 
-no período de outubro de 1997 a outubro de 2022, proporcionanddo uma visão panorâmica do comportamento da série em estudo. 
+no período de outubro de 1997 a outubro de 2022, proporcionanddo uma visão panorâmica do comportamento da série em estudo.
+Com isso é possível observar-se que ao longo de 25 anos o menor valor do preço foi de R\$ 13,87 (agosto de 1998) e o maior valor R\$ 195,85 (março de 2022), além de algumas medidas que quantificam a dispersão dos dados, tais como o desvio-padrão $sd = 40,91$ e o coeficiente de variação $CV = 69,77$.
 
 <<script3, echo = FALSE>>=
 soja %>% 
@@ -432,44 +438,115 @@ soja %>%
 
 
 
-A Figura \ref{fig1} apresenta a série original do indicador de preço em reais da soja no intervalo de outubro de 1997 a outubro de 2022 
+A Figura \ref{fig1} apresenta a série original do indicador de preço médio mensal em reais da soja no intervalo de outubro de 1997 a outubro de 2022. Observa-se que o comportamento da série apresenta uma tendência não uniforme em seus preços.
 
-<<script1, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Indicador de preço da soja no período de outubro de 1997 até outubro de 2022 \\label{fig1}", fig.width=7,fig.height=4, fig.pos="H">>=
+<<script1, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Indicador de preço da soja no período de outubro de 1997 até outubro de 2022 \\label{fig1}", fig.height=3, fig.width=6, fig.pos="H">>=
 soja %>% 
   autoplot(, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
 @
 
+Pode-se observar na apresentação da Figura \ref{fig2} a decomposição da série em componentes: série original, parte aleatória, sazonalidade e tendência. Em vista disso, constata-se que a série oscila em torno de uma valor médio do preço da soja e com um padrão recorrente bem definido, o que deixa implícito a presença de sazonalidade aditiva e a existência de tendência nos dados.
 
 
-
-<<script2, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
+<<script2, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Decomposição da série de preço da soja.\\label{fig2}", fig.height=4>>=
 soja %>% 
   stl(, s.window = "periodic") %>% 
     autoplot(, ts.colour = "blue")
 @
 
+Na Figura \ref{fig4}, é possível verificar o comportamento anual do preço médio mensal, composto de 301 observações, onde pode-se observar que os preços mais altos concentram nos meses de maio e junho e com mais variabilidade dos preços. Mas os preços médio em meses apresentaram comportamentos de variação similares entre si. Pode-se notar que todos os meses apresentaram no mínimo um valor atípico (outlier).
 
-
-
-
-<<script4, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
-soja %>% 
-  acf(, main = "Função de Autocorrelação")
+<<script5, message=FALSE, warning=FALSE, echo=FALSE, fig.cap=" Gráfico de Boxplot, da série distribúida entre os meses (período de 10/1997 a 10/2022).\\label{fig4}", fig.height=4, fig.width=6, fig.pos="H">>=
+library(xts)
+df <- data.frame(date=as.Date(time(soja)), Preço=as.matrix(soja))
+ggplot(df) + geom_boxplot(aes(x = format(date, "%m"), y = Preço)) + 
+  scale_x_discrete("Meses", labels = unique(format(df$date, "%b")))
 @
 
 
+As funções de autocorrelação (ACF) e autocorrelação parcial (PACF) da série, representadas na Figura \ref{fig3}, nota-se que ela decresce rapidamente, indicando a estacionariedade da série 
 
 
-
-<<script5, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
-SJdif <- diff(soja) 
-autoplot(SJdif, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
+<<script4, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Correlograma da série.\\label{fig3}", fig.height=4>>=
+par(mfrow=c(1,2))
+soja %T>% 
+  acf(, main = "Função de Autocorrelação") %>% 
+  pacf(, main = "Função de Autocorrelação Parical")
 @
 
 
-<<script6, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="", fig.height=4>>=
-SJlog <- log(soja) 
-autoplot(SJlog, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.colour = 'blue')
+Após ser aplicada a diferença, foi plotado novamente as funções para confirmar a eliminação da componente sazonal, e identificar as ordens de possíveis modelos \textbf{ARIMA} para a série. A Figura \ref{fig4}c, obersa que a ao aplicar a diferenciação, a série aparenta está estacionária na média, mas a variância é crescente ao longo do tempo. Como um dos pressupostos da teoria Box \& Jenkins é que a série seja também estacionaária na variância. Para tal, aplicaremos o logaritmo na série em questão. A Figura \ref{fig4}d nos mostra que temos a série estacionária na média e na variância.
+
+<<script6, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Gráficos: a) Função de Autocorrelação da série logaritma diferenciada; b) Função de Autocorrelaçaõ Parcial da série logaritma diferenciada; c) Comportamento da variação da série diferenciada; e d) Logaritmo da diferenciação da série, para estabilizar a variância.\\label{fig4}", fig.height=5>>=
+Soja_dif <- diff(soja)
+Soja_log <- log(soja)
+Soja.log.dif1 <- diff(log(soja))
+par(mfrow=c(2,2))
+Soja.log.dif1 %T>% 
+  acf(, main = "a)") %>% 
+  pacf(, main = "b)")
+
+plot(Soja_dif, ylab = 'Var. do preço', main = "c)")
+plot(diff(Soja_log), ylab = "log_Var. do preço", main = "d)")
+@
+
+
+Analisando os correlogramas anteriores, alguns coeficientes se mostraram não significativosfica claro que aplicando a diferenciação, a série torna-se estacionária. Para uma melhor verificação da função de autocorrelação e autocorrelação parical, aplicaremos testes para verificar a estacionariedade da série, tais: o \textit{teste de Dickey-Fuller Aumentado}, \textit{Raiz Unitária}; teste de \textit{Phillips-Perron}; teste de KPSS (Kwiatkowski, Philips, Schimidt e Shin). 
+
+<<script7, warning=FALSE>>=
+# Teste ADF.
+adf.test(Soja.log.dif1)
+
+# Teste de Phillips-Perron.
+pp.test(Soja.log.dif1)
+
+# Teste KPSS.
+kpss.test(Soja.log.dif1, null = "Level")
+@
+
+Anunciando nossa hipótese, a regra de decisão da rejeição ou não da hipótese nula ($H_0$) é: se o \textit{p-valor} é menor que o valor significativo, então rejeita-se $H_0$. Caso contrário, não rejeita-se $H_0$. Com isso, podemos verificar pelo teste que o \textit{p-valor} é menor que o valor significativo de 5\%. Apenas no teste de KPSS o anunciado das hipóteses são inversas, neste caso todos os testes indicam que a série é estacionária. Após a identificação das ordens de diferenciação sequêncial e sazonal, tem-se um modelo com a seguinte característica \textbf{ARIMA($p,1,q$)($P,1,Q$)}.
+
+\begin{equation*}
+\begin{split}
+H_0 & : \text{A série não é estacionária.} \\
+H_1 & : \text{A série é estacionária.}
+\end{split}
+\end{equation*}
+
+
+<<script8, warning=FALSE>>=
+# Teste ADF.
+adf.test(Soja.log.dif1)
+
+# Teste de Phillips-Perron.
+pp.test(Soja.log.dif1)
+
+# Teste KPSS.
+kpss.test(Soja.log.dif1, null = "Level")
+@
+
+
+Como é demasiado o serviço para selecionar valores apropriado para cada um desses três parâmetros, a função "forecast::auto.arima()", faz automaticamente.
+
+<<script9, warning=FALSE>>=
+# Estimativa do modelo ARIMA.
+mod.arima <- auto.arima(Soja_log)
+summary(mod.arima)
+@
+
+O modelo resultante é um ARIMA(1,1,0)(2,0,0), o que corresponde a uma combinação a uma série com um grau de diferenciação ($p = 1$) aplicada em um modelo AR(1) e em um MA(0). Antes de fazer a previsão, faremos uma análise de resíduos. Podemos verificar na Figura \ref{fig11} que o gráfico ACF dos resíduos do modelo \textbf{ARIMA}(1,1,0)(2,0,0) mostra que todas as autocorrelações estão dentro dos limites, indicando que os resíduos estão se comportando como ruído branco. E o teste de Ljung-Box retorna um grande p-valor (maior do que o valor significativo de 5\%), sugerindo também que os resíduos são ruído branco. 
+
+<<script11, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Gráficos de resíduos para o modelo ARIMA(1,1,0)(2,0,0).\\label{fig11}", fig.height=4>>=
+checkresiduals(mod.arima)
+@
+
+
+Agora faremos a previsão da série, apresentado na Figura \ref{fig12} seguinte.
+
+<<script12, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Previsão para o indíce de preço da soja.\\label{fig12}", fig.height=5>>=
+prev <- forecast(mod.arima, h = 10)
+prev %>% 
+  autoplot()
 @
 
 
@@ -478,7 +555,9 @@ autoplot(SJlog, xlab = "Tempo", ylab = "Valor (Reais por saca de 60 kg)", ts.col
 
 \chapter{Considerações Finais}
 
-O presente trabalho teve como objetivo estudar o comportamento do preço da Soja no Brasil, e testar a metodologia Box \& Jenkins para previsão.
+O presente trabalho teve como objetivo estudar o comportamento do preço da Soja no Brasil, e testar a metodologia Box \& Jenkins para previsão. Para isso foi utilizado uma função do pacote "forecast" do Software R para obter o modelo ideal para série, função está que é automatizada que reduz o número de combinações de modelos possíveis adequados. O modelo destacado foi o ARIMA(1,1,0)(2,0,0). De posse deste modelo é possível inferir o preço futuro da saca de 60kg da soja comercializada no Brasil, possibilitando assim melhor planejamento da compra, venda e produção desse grão.
+
+Algumas lmiitações podem ser revistas em estudos futuros, como: (a) relacionar outras técnicas de previsão; (b) relacionar eventos pontuais em cada ano e identificar o quanto influência no preço da soja. Este estudo pode contribuir para pesquisas acadêmicas de métodos quantitativos de previsão e para entender os valores futuros do produto para prentensão de aumentar seus lucros. 
 
 
 

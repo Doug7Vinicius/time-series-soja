@@ -9,22 +9,20 @@
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeUppercase []{Séries Temporais}}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Processos Estocásticos}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Processo Estocástico Estacionário}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Decomposição de um Série Temporal}{11}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Modelos ARIMA}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.2}Modelos ARIMA}{10}{section.2.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeUppercase []{Metodologia}}{12}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeUppercase []{Metodologia}}{13}{chapter.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeUppercase []{Resultados e Discussões}}{13}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {4}\MakeUppercase []{Resultados e Discussões}}{14}{chapter.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeUppercase []{Considerações Finais}}{16}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {5}\MakeUppercase []{Considerações Finais}}{22}{chapter.5}%
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeUppercase []{Refer\^encias}}{17}{section*.8}%
+\contentsline {chapter}{\MakeUppercase []{Refer\^encias}}{23}{section*.8}%
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
 \setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
 \cftinsert {A}
-\contentsline {part}{\uppercase {Ap\^endices}}{18}{section*.9}%
+\contentsline {part}{\uppercase {Ap\^endices}}{24}{section*.9}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \cftinsert {A}
-\contentsline {appendix}{\chapternumberline {A}\MakeUppercase []{SCRIPT R}}{19}{appendix.A}%
+\contentsline {appendix}{\chapternumberline {A}\MakeUppercase []{SCRIPT R}}{25}{appendix.A}%

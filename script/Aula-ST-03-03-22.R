@@ -114,7 +114,6 @@ cox.stuart.test(APlog.dif2)
 # ARIMA(p,d,q)
 # SARIMA(1,1,1)(1,1,1)
 
-x11()
 acf(APlog.dif2)
 
 #m1 <- acf(APlog.dif2, plot = F)
@@ -180,7 +179,6 @@ modelo3$coef
 ### Verifica??o do modelo
 ########################################
 
-x11()
 tsdiag(modelo3) 
 # retorna o gr?fico dos res?duos padronizados, 
 # o correlograma e os

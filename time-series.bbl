@@ -30,6 +30,17 @@ Dispon{\'\i}vel em: \url{https://www.embrapa.br/soja}.}
 Acesso em 26 de novembro de 2022.
 Dispon{\'\i}vel em: \url{www.fao.org/faostat/en/\#data/QCL/visualize}.}
 
+\bibitem[Hyndman e Athanasopoulos 2018]{hyndman2018forecasting}
+\abntrefinfo{Hyndman e Athanasopoulos}{HYNDMAN; ATHANASOPOULOS}{2018}
+{HYNDMAN, R.~J.; ATHANASOPOULOS, G. \emph{Forecasting: principles and
+  practice}. [S.l.]: OTexts, 2018.}
+
+\bibitem[Martins e Werner 2014]{martins2014comparison}
+\abntrefinfo{Martins e Werner}{MARTINS; WERNER}{2014}
+{MARTINS, V. L.~M.; WERNER, L. Comparison of individual forecasts and their
+  combinations: a study with industrial series.
+\emph{Production}, SciELO Brasil, v.~24, p. 618--627, 2014.}
+
 \bibitem[Morettin e Toloi 2006]{morettin2006analise}
 \abntrefinfo{Morettin e Toloi}{MORETTIN; TOLOI}{2006}
 {MORETTIN, P.; TOLOI, C. An{\'a}lise de s{\'e}ries temporais
